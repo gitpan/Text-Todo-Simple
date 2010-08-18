@@ -1,0 +1,205 @@
+#!/usr/bin/perl
+
+use Text::Todo::Simple;
+
+use warnings;
+use strict;
+
+=head1 NAME
+
+Text::Todo::Simple - Command-line frontend to Text::Todo::Simple
+
+=head1 VERSION
+
+Version 0.04
+
+=cut
+
+our $VERSION = '0.04';
+
+=head1 SYNOPSIS
+
+ t.pl [ACTION] [ARGS]
+
+ Actions:
+   add, a TEXT
+   remove, rm ID
+   list, ls [STRING]
+   move, mv ID NEW
+   edit, ed ID TEXT
+
+=cut
+
+my ($default_todo, $default_done);
+
+if ($^O eq 'MSWin32') {
+	$default_todo = $ENV{USERPROFILE}."\\todo.txt";
+	$default_done = $ENV{USERPROFILE}."\\done.txt";
+} else {
+	$default_todo = $ENV{HOME}."/.todo";
+	$default_done = $ENV{HOME}."/.done";
+}
+
+my $todo_file 	   = $ENV{TODO_FILE}    ? $ENV{TODO_FILE}    : $default_todo;
+my $done_file 	   = $ENV{DONE_FILE}    ? $ENV{DONE_FILE}    : $default_done;
+my $default_action = $ENV{TODO_DEFAULT} ? $ENV{TODO_DEFAULT} : 'list';
+
+my $todo = Text::Todo::Simple -> new(todo_file => $todo_file,
+				     done_file => $done_file);
+
+my %actions = (
+	add      => \&add,
+	remove	 => \&remove,
+	list	 => \&list,
+	move	 => \&move,
+	edit	 => \&edit
+);
+
+my %aliases = (
+	a    => 'add',
+	rm   => 'remove',
+	ls   => 'list',
+	mv   => 'move',
+	ed   => 'edit'
+);
+
+my $action = shift @ARGV;
+
+if ($action && $aliases{$action}) {
+	$action = $aliases{$action};
+}
+
+$action = $default_action unless $action;
+
+if ($actions{$action}) {
+	$actions{$action} -> (@ARGV);
+}
+
+sub add {
+	my $task = join ' ', @_;
+
+	$todo -> add($task);
+}
+
+sub remove { $todo -> remove(@_); }
+
+sub list { $todo -> list(@_); }
+
+sub move { $todo -> move(@_); }
+
+sub edit {
+	my $id  = shift;
+	
+	my $task = join ' ', @_;
+
+	chomp $task;
+	
+	$todo -> edit($id, $task);
+}
+
+=head1 ACTION
+
+=over 4
+
+=item B<add>, B<a> TEXT
+
+add a task to the list
+
+=item B<remove>, B<rm> ID
+
+remove a task from the list
+
+=item B<list>, B<ls> [STRING]
+
+list tasks containing STRING (can be empty)
+
+=item B<move>, B<mv> ID NEW
+
+move a task from ID to NEW
+
+=item B<edit>, B<ed> ID TEXT
+
+replace the task ID with TEXT
+
+=back
+
+=head1 CONFIGURATION
+
+The following environment variables will affect t.pl behaviour:
+
+=over
+
+=item B<TODO_FILE>
+
+Specifies the path of the todo file. Default ~/.todo
+
+=item B<DONE_FILE>
+
+Specifies the path of the done file. Default ~/.done
+
+=item B<TODO_DEFAULT>
+
+Set the default action, this will be used when no action is specified.
+Default 'list'
+
+=back
+
+=head1 AUTHOR
+
+Alessandro Ghedini, C<< <alexbio at cpan.org> >>
+
+=head1 BUGS
+
+Please report any bugs or feature requests to C<bug-text-todo-simple at rt.cpan.org>, or through
+the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Text-Todo-Simple>.  I will be notified, and then you'll
+automatically be notified of progress on your bug as I make changes.
+
+=head1 SUPPORT
+
+You can find documentation for this module with the perldoc command.
+
+    perldoc Text::Todo::Simple
+    perldoc t.pl
+
+You can also look for information at:
+
+=over 4
+
+=item * GitHub page
+
+L<http://github.com/AlexBio/Text-Todo-Simple>
+
+=item * RT: CPAN's request tracker
+
+L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Text-Todo-Simple>
+
+=item * AnnoCPAN: Annotated CPAN documentation
+
+L<http://annocpan.org/dist/Text-Todo-Simple>
+
+=item * CPAN Ratings
+
+L<http://cpanratings.perl.org/d/Text-Todo-Simple>
+
+=item * Search CPAN
+
+L<http://search.cpan.org/dist/Text-Todo-Simple/>
+
+=back
+
+=head1 SEE ALSO
+
+L<Text::Todo::Simple>
+
+=head1 LICENSE AND COPYRIGHT
+
+Copyright 2010 Alessandro Ghedini.
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of either: the GNU General Public License as published
+by the Free Software Foundation; or the Artistic License.
+
+See http://dev.perl.org/licenses/ for more information.
+
+
+=cut
