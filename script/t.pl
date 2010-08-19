@@ -7,26 +7,27 @@ use strict;
 
 =head1 NAME
 
-Text::Todo::Simple - Command-line frontend to Text::Todo::Simple
+t.pl - Command-line frontend to Text::Todo::Simple
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05
 
 =cut
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 =head1 SYNOPSIS
 
  t.pl [ACTION] [ARGS]
 
  Actions:
-   add, a TEXT
-   remove, rm ID
-   list, ls [STRING]
-   move, mv ID NEW
-   edit, ed ID TEXT
+
+   add, a 	TEXT
+   remove, rm 	ID
+   list, ls 	[STRING]
+   move, mv 	ID NEW
+   edit, ed 	ID TEXT
 
 =cut
 
@@ -42,7 +43,7 @@ if ($^O eq 'MSWin32') {
 
 my $todo_file 	   = $ENV{TODO_FILE}    ? $ENV{TODO_FILE}    : $default_todo;
 my $done_file 	   = $ENV{DONE_FILE}    ? $ENV{DONE_FILE}    : $default_done;
-my $default_action = $ENV{TODO_DEFAULT} ? $ENV{TODO_DEFAULT} : 'list';
+my $default_action = $ENV{TODO_DEFAULT} ? $ENV{TODO_DEFAULT} : 'help';
 
 my $todo = Text::Todo::Simple -> new(todo_file => $todo_file,
 				     done_file => $done_file);
@@ -52,7 +53,8 @@ my %actions = (
 	remove	 => \&remove,
 	list	 => \&list,
 	move	 => \&move,
-	edit	 => \&edit
+	edit	 => \&edit,
+	help	 => \&help
 );
 
 my %aliases = (
@@ -63,29 +65,40 @@ my %aliases = (
 	ed   => 'edit'
 );
 
-my $action = shift @ARGV;
+my $action = $ARGV[0];
 
 if ($action && $aliases{$action}) {
 	$action = $aliases{$action};
+	shift @ARGV;
+} elsif (!$action || !$actions{$action}) {
+	$action = $default_action;
+} elsif ($actions{$action}) {
+	shift @ARGV;
 }
 
-$action = $default_action unless $action;
-
-if ($actions{$action}) {
-	$actions{$action} -> (@ARGV);
-}
+$actions{$action} -> (@ARGV);
 
 sub add {
 	my $task = join ' ', @_;
 
-	$todo -> add($task);
+	my $i = $todo -> add($task);
+
+	print "Added task $i\n";
 }
 
-sub remove { $todo -> remove(@_); }
+sub remove {
+	$todo -> remove(@_);
+
+	print "Removed task ".shift()."\n";
+}
 
 sub list { $todo -> list(@_); }
 
-sub move { $todo -> move(@_); }
+sub move {
+	$todo -> move(@_);
+
+	print "Moved task ".$_[0]." to ".$_[1]."\n";
+}
 
 sub edit {
 	my $id  = shift;
@@ -95,6 +108,25 @@ sub edit {
 	chomp $task;
 	
 	$todo -> edit($id, $task);
+
+	print "Replaced task $id\n";
+}
+
+sub help {
+	my $usage = <<END;
+Usage: t.pl [ACTION] [ARGS]
+
+ Actions:
+  add, a 	TEXT
+  remove, rm 	ID
+  list, ls 	[STRING]
+  move, mv 	ID NEW
+  edit, ed 	ID TEXT
+
+See 'perldoc t.pl' for more information.
+END
+
+	print $usage;
 }
 
 =head1 ACTION
