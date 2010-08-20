@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Text-Todo-Simple
-version:            0.05
+version:            0.06
 abstract:           Todo list manager that helps in finishing tasks, not organizing them
 author:
     - Alessandro Ghedini <alexbio@cpan.org>

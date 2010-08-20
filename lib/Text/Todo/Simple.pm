@@ -11,11 +11,11 @@ Text::Todo::Simple - Todo list manager that helps in finishing tasks, not organi
 
 =head1 VERSION
 
-Version 0.05
+Version 0.06
 
 =cut
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 
 =head1 SYNOPSIS
@@ -93,7 +93,7 @@ sub do {
 	my $task = @{ _read($self -> {'todo_file'}) }[$id-1];
 	_append($self -> {'done_file'}, $task);
 	
-	$self -> rm($id);
+	$self -> remove($id);
 }
 
 =head2 list( $grep )

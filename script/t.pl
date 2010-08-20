@@ -11,11 +11,11 @@ t.pl - Command-line frontend to Text::Todo::Simple
 
 =head1 VERSION
 
-Version 0.05
+Version 0.06
 
 =cut
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 =head1 SYNOPSIS
 
@@ -24,6 +24,7 @@ our $VERSION = '0.05';
  Actions:
 
    add, a 	TEXT
+   do 		ID
    remove, rm 	ID
    list, ls 	[STRING]
    move, mv 	ID NEW
@@ -50,6 +51,7 @@ my $todo = Text::Todo::Simple -> new(todo_file => $todo_file,
 
 my %actions = (
 	add      => \&add,
+	do       => \&do,
 	remove	 => \&remove,
 	list	 => \&list,
 	move	 => \&move,
@@ -84,6 +86,12 @@ sub add {
 	my $i = $todo -> add($task);
 
 	print "Added task $i\n";
+}
+
+sub do {
+	$todo -> do(@_);
+
+	print "Done task ".shift()."\n";
 }
 
 sub remove {
@@ -136,6 +144,10 @@ END
 =item B<add>, B<a> TEXT
 
 add a task to the list
+
+=item B<do> ID
+
+mark a task as done, and move it to done file
 
 =item B<remove>, B<rm> ID
 
