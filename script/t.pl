@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 
 use Text::Todo::Simple;
+use Getopt::Long;
 
 use warnings;
 use strict;
@@ -11,15 +12,15 @@ t.pl - Command-line frontend to Text::Todo::Simple
 
 =head1 VERSION
 
-Version 0.06
+Version 0.07
 
 =cut
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 =head1 SYNOPSIS
 
- t.pl [ACTION] [ARGS]
+ t.pl [OPTIONS] [ACTION] [ARGS]
 
  Actions:
 
@@ -29,6 +30,10 @@ our $VERSION = '0.06';
    list, ls 	[STRING]
    move, mv 	ID NEW
    edit, ed 	ID TEXT
+
+ Options:
+   --todo, -t   FILE
+   --done, -d   FILE
 
 =cut
 
@@ -45,6 +50,9 @@ if ($^O eq 'MSWin32') {
 my $todo_file 	   = $ENV{TODO_FILE}    ? $ENV{TODO_FILE}    : $default_todo;
 my $done_file 	   = $ENV{DONE_FILE}    ? $ENV{DONE_FILE}    : $default_done;
 my $default_action = $ENV{TODO_DEFAULT} ? $ENV{TODO_DEFAULT} : 'help';
+
+GetOptions ("todo=s" => \$todo_file,
+	    "done=s" => \$done_file);
 
 my $todo = Text::Todo::Simple -> new(todo_file => $todo_file,
 				     done_file => $done_file);
@@ -167,6 +175,20 @@ replace the task ID with TEXT
 
 =back
 
+=head1 ACTION
+
+=over 4
+
+=item B<--todo>, B<-t> FILE
+
+set todo file (takes precedence on configuration)
+
+=item B<--done>, B<-d> FILE
+
+set todo file (takes precedence on configuration)
+
+=back
+
 =head1 CONFIGURATION
 
 The following environment variables will affect t.pl behaviour:
@@ -184,7 +206,7 @@ Specifies the path of the done file. Default ~/.done
 =item B<TODO_DEFAULT>
 
 Set the default action, this will be used when no action is specified.
-Default 'list'
+Default 'help'
 
 =back
 
@@ -244,6 +266,5 @@ under the terms of either: the GNU General Public License as published
 by the Free Software Foundation; or the Artistic License.
 
 See http://dev.perl.org/licenses/ for more information.
-
 
 =cut

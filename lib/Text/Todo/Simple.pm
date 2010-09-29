@@ -11,11 +11,11 @@ Text::Todo::Simple - Todo list manager that helps in finishing tasks, not organi
 
 =head1 VERSION
 
-Version 0.06
+Version 0.07
 
 =cut
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 
 =head1 SYNOPSIS
@@ -47,7 +47,7 @@ matters: emptying the todo list. The time that one wastes in tagging,
 prioritizing and organizing tasks, can be spent more effectively B<completing>
 the tasks.
 
-Text::Todo::Simple was inspired by stevelosh' L<t|<a href="http://stevelosh.com/projects/t/"></a>> project.
+Text::Todo::Simple was inspired by stevelosh' t project (L<http://stevelosh.com/projects/t/>).
 
 =head1 METHODS
 
