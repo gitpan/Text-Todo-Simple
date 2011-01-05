@@ -1,6 +1,6 @@
 package Text::Todo::Simple;
 BEGIN {
-  $Text::Todo::Simple::VERSION = '0.08'; # TRIAL
+  $Text::Todo::Simple::VERSION = '0.09';
 }
 
 use Carp;
@@ -14,7 +14,7 @@ Text::Todo::Simple - Todo list manager that helps in finishing tasks, not organi
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 SYNOPSIS
 

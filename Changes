@@ -2,13 +2,25 @@
 9999-99-99 99:99:99 +0000 HEAD
 ==============================
 
-  commit 05c49d01d0c9c791522de28c2adb62442252463b
+  commit cca09c94bc67601f95fc2501ebbd80bccbd5b291
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Wed Jan 5 18:39:09 2011 +0100
+  
+    bump version
+
+  commit abd80a7a5c48d43e84ab868a38ccddf14c01ed26
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Wed Jan 5 18:38:31 2011 +0100
+  
+    rename t.pl -> t
+
+  commit 0bfc6e5012ca51da58c4925c813ce9f99bbebd99
   Author: Alessandro Ghedini <al3xbio@gmail.com>
   Date:   Wed Jan 5 14:35:33 2011 +0100
   
     bump version
 
-  commit 14e994047a40520483d921869e8f89c496b4f18e
+  commit e9d75f5e08f586a00521662e6009f352a7db684d
   Author: Alessandro Ghedini <al3xbio@gmail.com>
   Date:   Wed Jan 5 13:54:13 2011 +0100
   
