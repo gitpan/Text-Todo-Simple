@@ -25,7 +25,7 @@ my %WriteMakefileArgs = (
     'Carp' => '0',
     'Data::Dumper' => '0'
   },
-  'VERSION' => '0.07',
+  'VERSION' => '0.08',
   'test' => {
     'TESTS' => 't/*.t'
   }

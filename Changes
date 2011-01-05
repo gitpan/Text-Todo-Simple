@@ -2,6 +2,22 @@
 9999-99-99 99:99:99 +0000 HEAD
 ==============================
 
+  commit 05c49d01d0c9c791522de28c2adb62442252463b
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Wed Jan 5 14:35:33 2011 +0100
+  
+    bump version
+
+  commit 14e994047a40520483d921869e8f89c496b4f18e
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Wed Jan 5 13:54:13 2011 +0100
+  
+    switch to Dist::Zilla 
+
+===============================
+2010-09-29 21:29:28 +0200 v0.07
+===============================
+
   commit 55f85fd013284054284a759e9896596a15d5c0c3
   Author: Alessandro Ghedini <al3xbio@gmail.com>
   Date:   Wed Sep 29 21:29:28 2010 +0200

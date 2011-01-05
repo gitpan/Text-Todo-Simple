@@ -10,14 +10,6 @@ use strict;
 
 t.pl - Command-line frontend to Text::Todo::Simple
 
-=head1 VERSION
-
-Version 0.07
-
-=cut
-
-our $VERSION = '0.07';
-
 =head1 SYNOPSIS
 
  t.pl [OPTIONS] [ACTION] [ARGS]
