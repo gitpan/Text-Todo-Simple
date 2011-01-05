@@ -1,6 +1,6 @@
 package Text::Todo::Simple;
 BEGIN {
-  $Text::Todo::Simple::VERSION = '0.08';
+  $Text::Todo::Simple::VERSION = '0.08'; # TRIAL
 }
 
 use Carp;
