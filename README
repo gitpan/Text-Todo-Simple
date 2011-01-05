@@ -1,53 +1,13 @@
-Text-Todo-Simple
-
-Text::Todo::Simple is a simple and basic todo list manager, without all
-the additional features that make people spending more time on organizing
-tasks instead of completing them.
-
-Text::Todo::Simple tries to be as effective as possible doing the unique
-thing it does without any surplus.
-
-INSTALLATION
-
-To install this module, run the following commands:
-
-	perl Makefile.PL
-	make
-	make test
-	make install
-
-SUPPORT AND DOCUMENTATION
-
-After installing, you can find documentation for this module with the
-perldoc command.
-
-    perldoc Text::Todo::Simple
-
-You can also look for information at:
-
-    GitHub page
-        http://github.com/AlexBio/Text-Todo-Simple
-
-    RT, CPAN's request tracker
-        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Text-Todo-Simple
-
-    AnnoCPAN, Annotated CPAN documentation
-        http://annocpan.org/dist/Text-Todo-Simple
-
-    CPAN Ratings
-        http://cpanratings.perl.org/d/Text-Todo-Simple
-
-    Search CPAN
-        http://search.cpan.org/dist/Text-Todo-Simple/
 
 
-LICENSE AND COPYRIGHT
+This archive contains the distribution Text-Todo-Simple,
+version 0.07:
 
-Copyright (C) 2010 Alessandro Ghedini
+  Todo list manager that helps in finishing tasks, not organizing them
 
-This program is free software; you can redistribute it and/or modify it
-under the terms of either: the GNU General Public License as published
-by the Free Software Foundation; or the Artistic License.
+This software is copyright (c) 2011 by Alessandro Ghedini.
 
-See http://dev.perl.org/licenses/ for more information.
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
 

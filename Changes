@@ -1,101 +1,117 @@
-commit c2e49bd0a133218276c73c6580fe575c8e75227c
-Author: Alessandro Ghedini <al3xbio@gmail.com>
-Date:   Wed Sep 29 21:28:37 2010 +0200
+==============================
+9999-99-99 99:99:99 +0000 HEAD
+==============================
 
+  commit 55f85fd013284054284a759e9896596a15d5c0c3
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Wed Sep 29 21:29:28 2010 +0200
+  
+    bump version and changelog
+
+  commit c2e49bd0a133218276c73c6580fe575c8e75227c
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Wed Sep 29 21:28:37 2010 +0200
+  
     fix documentation typos
 
-commit 5bac4e8138b8eef4395a5caba16e563c9f904e49
-Author: Alessandro Ghedini <al3xbio@gmail.com>
-Date:   Wed Sep 29 21:19:47 2010 +0200
+  commit 5bac4e8138b8eef4395a5caba16e563c9f904e49
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Wed Sep 29 21:19:47 2010 +0200
+  
+    add command-line options for setting files 
 
-    add command-line options for setting files
+===============================
+2010-08-20 17:34:46 +0200 v0.06
+===============================
 
-commit 2adb4de82e27ee1fbb5f239979e4380d7b3c1cba
-Author: Alessandro Ghedini <al3xbio@gmail.com>
-Date:   Fri Aug 20 17:33:43 2010 +0200
+  commit 2adb4de82e27ee1fbb5f239979e4380d7b3c1cba
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Fri Aug 20 17:33:43 2010 +0200
+  
+    fix do action 
 
-    fix do action
+===============================
+2010-08-19 21:52:18 +0200 v0.05
+===============================
 
-commit e81f50e7215849b8e173f1fb926b03f3e183364e
-Author: Alessandro Ghedini <al3xbio@gmail.com>
-Date:   Thu Aug 19 21:52:18 2010 +0200
-
+  commit e81f50e7215849b8e173f1fb926b03f3e183364e
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Aug 19 21:52:18 2010 +0200
+  
     fix stupid error in t.pl doc
 
-commit 2afffd18ac01853f0f340fffc86b318d801afd99
-Author: Alessandro Ghedini <al3xbio@gmail.com>
-Date:   Thu Aug 19 21:49:05 2010 +0200
-
+  commit 2afffd18ac01853f0f340fffc86b318d801afd99
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Aug 19 21:49:05 2010 +0200
+  
     fix bug in default action's args
 
-commit 7a062d8762d6d129762c779e27035173fdbb894f
-Author: Alessandro Ghedini <al3xbio@gmail.com>
-Date:   Thu Aug 19 21:39:37 2010 +0200
-
+  commit 7a062d8762d6d129762c779e27035173fdbb894f
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Aug 19 21:39:37 2010 +0200
+  
     make help default action
 
-commit c1c1254ae1c9d220e66bed8066434a1d0ca00023
-Author: Alessandro Ghedini <al3xbio@gmail.com>
-Date:   Thu Aug 19 21:39:02 2010 +0200
-
+  commit c1c1254ae1c9d220e66bed8066434a1d0ca00023
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Aug 19 21:39:02 2010 +0200
+  
     add help action
 
-commit a2ebb5171411c3e9c012a688249d267b6f6e76e7
-Author: Alessandro Ghedini <al3xbio@gmail.com>
-Date:   Thu Aug 19 21:30:30 2010 +0200
-
+  commit a2ebb5171411c3e9c012a688249d267b6f6e76e7
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Aug 19 21:30:30 2010 +0200
+  
     fix actions alignment in t.pl doc
 
-commit 3c8d1e813a1beeac394a96c4ff074152a33a8bc4
-Author: Alessandro Ghedini <al3xbio@gmail.com>
-Date:   Thu Aug 19 21:29:02 2010 +0200
-
+  commit 3c8d1e813a1beeac394a96c4ff074152a33a8bc4
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Aug 19 21:29:02 2010 +0200
+  
     add verbosity
 
-commit 8af36d3d18f954758b3344d11b8de42e0d2a1044
-Author: Alessandro Ghedini <al3xbio@gmail.com>
-Date:   Thu Aug 19 21:24:59 2010 +0200
+  commit 8af36d3d18f954758b3344d11b8de42e0d2a1044
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Aug 19 21:24:59 2010 +0200
+  
+    make todo -> add returns new task's position 
 
-    make todo -> add returns new task's position
+===============================
+2010-08-18 17:48:50 +0200 v0.04
+===============================
 
-commit 57022b961ae599377d5e2def1317156a260a364d
-Author: Alessandro Ghedini <al3xbio@gmail.com>
-Date:   Wed Aug 18 17:48:50 2010 +0200
+  commit 57022b961ae599377d5e2def1317156a260a364d
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Wed Aug 18 17:48:50 2010 +0200
+  
+    fix MANIFEST 
 
-    fix MANIFEST
+===============================
+2010-08-18 16:53:51 +0200 v0.03
+===============================
 
-commit 8069c679dac2566fafcd04c671d3d47e56040e76
-Author: Alessandro Ghedini <al3xbio@gmail.com>
-Date:   Wed Aug 18 16:53:51 2010 +0200
+  commit 8069c679dac2566fafcd04c671d3d47e56040e76
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Wed Aug 18 16:53:51 2010 +0200
+  
+    another bugfix in default action... I'm so lame -.-' 
 
-    another bugfix in default action... I'm so lame -.-'
+===============================
+2010-08-18 16:44:56 +0200 v0.02
+===============================
 
-commit efddffaaeb1bd75974f43c48dd8f749d31564627
-Author: Alessandro Ghedini <al3xbio@gmail.com>
-Date:   Wed Aug 18 16:44:56 2010 +0200
-
+  commit efddffaaeb1bd75974f43c48dd8f749d31564627
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Wed Aug 18 16:44:56 2010 +0200
+  
     update version
 
-commit c9206527fc231b1674b1296782cbb4c4dfd4322b
-Author: Alessandro Ghedini <al3xbio@gmail.com>
-Date:   Wed Aug 18 16:44:25 2010 +0200
+  commit c9206527fc231b1674b1296782cbb4c4dfd4322b
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Wed Aug 18 16:44:25 2010 +0200
+  
+    fix bug in add 
 
-    fix bug in add
-
-commit 1efa2a884b8c97396140ecff2d49054bf6f5f78b
-Author: Alessandro Ghedini <al3xbio@gmail.com>
-Date:   Wed Aug 18 15:26:14 2010 +0200
-
-    update README
-
-commit 6bf5636e2f0b5d4eae48a867516e423de0c62367
-Author: Alessandro Ghedini <al3xbio@gmail.com>
-Date:   Wed Aug 18 15:22:35 2010 +0200
-
-    add documentation
-
-commit ed4b1920be986d39eca357ae2a55f9fbcc1b8055
-Author: Alessandro Ghedini <al3xbio@gmail.com>
-Date:   Wed Aug 18 12:53:13 2010 +0200
-
-    first commit
+===================================
+End of changes in the last 365 days
+===================================
