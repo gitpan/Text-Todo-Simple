@@ -6,9 +6,10 @@ META.json
 META.yml
 Makefile.PL
 README
+bin/t
+bin/t.bundle
 dist.ini
 lib/Text/Todo/Simple.pm
-script/t
 t/00-load.t
 t/01-add.t
 t/02-edit.t

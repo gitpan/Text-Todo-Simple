@@ -2,6 +2,22 @@
 9999-99-99 99:99:99 +0000 HEAD
 ==============================
 
+  commit 8d2b6f0bdcca560ea4e9eb5e9c405cf0894607bb
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Jan 6 23:02:59 2011 +0100
+  
+    bump version
+
+  commit 92fc3690294a4c5789a6b197b571a82a3e6480e1
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Jan 6 23:01:54 2011 +0100
+  
+    rename script -> bin 
+
+===============================
+2011-01-06 22:51:46 +0100 v0.11
+===============================
+
   commit 9e4eef699725cb04762ee2b4f382f182dec3b967
   Author: Alessandro Ghedini <al3xbio@gmail.com>
   Date:   Thu Jan 6 22:35:56 2011 +0100

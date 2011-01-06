@@ -19,13 +19,17 @@ my %WriteMakefileArgs = (
     'ExtUtils::MakeMaker' => '6.31'
   },
   'DISTNAME' => 'Text-Todo-Simple',
-  'EXE_FILES' => [],
+  'EXE_FILES' => [
+    'bin/t',
+    'bin/t.bundle'
+  ],
   'LICENSE' => 'perl',
   'NAME' => 'Text::Todo::Simple',
   'PREREQ_PM' => {
-    'Carp' => '0'
+    'Carp' => '0',
+    'Getopt::Long' => '0'
   },
-  'VERSION' => '0.11',
+  'VERSION' => '0.12',
   'test' => {
     'TESTS' => 't/*.t'
   }

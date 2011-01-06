@@ -10,6 +10,10 @@ use strict;
 
 t - help people finish those damn tasks
 
+=head1 VERSION
+
+version 0.12
+
 =head1 SYNOPSIS
 
  t [OPTIONS] [ACTION] [ARGS]
@@ -247,11 +251,11 @@ Count tasks
 If you need to use t on a system where it is not installed (and you don't
 want to install it there) you can bootstrap t from the web as follows:
 
-    $ curl -sL  http://is.gd/kfQLc | perl -
+    $ curl -sL  http://is.gd/kfVKP | perl -
 
 or
 
-    $ wget -q http://is.gd/kfQLc -O- | perl -
+    $ wget -q http://is.gd/kfVKP -O- | perl -
 
 This method is useful since it downloads and runs t without installing or 
 modifying anything, but it could be a little slow as it have to download

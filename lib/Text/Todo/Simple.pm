@@ -1,6 +1,6 @@
 package Text::Todo::Simple;
 BEGIN {
-  $Text::Todo::Simple::VERSION = '0.11';
+  $Text::Todo::Simple::VERSION = '0.12';
 }
 
 use Carp;
@@ -14,7 +14,7 @@ Text::Todo::Simple - help people finish those damn tasks
 
 =head1 VERSION
 
-version 0.11
+version 0.12
 
 =head1 SYNOPSIS
 
