@@ -1,6 +1,6 @@
 package Text::Todo::Simple;
 BEGIN {
-  $Text::Todo::Simple::VERSION = '0.09';
+  $Text::Todo::Simple::VERSION = '0.10';
 }
 
 use Carp;
@@ -10,11 +10,11 @@ use strict;
 
 =head1 NAME
 
-Text::Todo::Simple - Todo list manager that helps in finishing tasks, not organizing them
+Text::Todo::Simple - help people finish those damn tasks
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 SYNOPSIS
 
@@ -128,6 +128,10 @@ sub remove {
 	my ($self, $id) = @_;
 
 	my $tasks = _read($self -> {'todo_file'});
+	
+	if ($id > scalar @{$tasks} || $id < 0) {
+		croak "Err: Invalid ID.\n";
+	}
 
 	splice @$tasks, $id-1, 1;
 
@@ -145,7 +149,17 @@ sub edit {
 
 	my $tasks = _read($self -> {'todo_file'});
 
-	@$tasks[$id-1] = $new;
+	if ($id > scalar @{$tasks} || $id < 0) {
+		croak "Err: Invalid ID.\n";
+	}
+	
+	carp $id;
+
+	if ($new =~ m/^s\//) {
+		eval '@$tasks[$id-1] =~ '.$new;
+	} else {
+		@{$tasks}[$id-1] = $new;
+	}
 
 	_write($self -> {'todo_file'}, $tasks);
 }
@@ -160,10 +174,18 @@ sub move {
 	my ($self, $id, $new) = @_;
 
 	my $tasks = _read($self -> {'todo_file'});
+
+	if ($id > scalar @{$tasks} || $id < 0) {
+		croak "Err: Invalid ID (source).\n";
+	}
+	
+	if ($new > scalar @{$tasks} || $new < 0) {
+		croak "Err: Invalid ID (dest).\n";
+	}
+
 	my $task  = @$tasks[$id-1];
 
 	splice @$tasks, $id-1, 1;
-	use Data::Dumper;
 	
 	splice @$tasks, $new-1, 0, $task;
 
@@ -181,7 +203,7 @@ Read file to array reference
 sub _read {
 	my $file = shift;
 
-	open(FILE, "<$file") or croak "Cannot open $file in read mode.\n";
+	open(FILE, "<$file") or croak "Err: Unable to open '$file' for read: $!.\n";
 	my @data = <FILE>;
 	close(FILE);
 
@@ -203,7 +225,7 @@ sub _append {
 
 	chomp $data;
 
-	open(FILE, ">>$file") or croak "Cannot open $file in append mode.\n";
+	open(FILE, ">>$file") or croak "Err: Unable to open '$file' for append: $!.\n";
 	print FILE $data, "\n";
 	close(FILE);
 }
@@ -217,7 +239,7 @@ Write array (by reference) to file
 sub _write {
 	my ($file, $data) = @_;
 
-	open(FILE, ">$file") or croak "Cannot open $file in read mode.\n";
+	open(FILE, ">$file") or croak "Err: Unable to open '$file' for write: $!.\n";
 
 	foreach my $item(@{ $data }) {
 		print FILE "$item\n";
@@ -241,7 +263,7 @@ automatically be notified of progress on your bug as I make changes.
 You can find documentation for this module with the perldoc command.
 
     perldoc Text::Todo::Simple
-    perldoc t.pl
+    perldoc t
 
 You can also look for information at:
 

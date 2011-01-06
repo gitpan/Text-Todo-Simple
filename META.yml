@@ -1,8 +1,9 @@
 ---
-abstract: 'Todo list manager that helps in finishing tasks, not organizing them'
+abstract: 'help people finish those damn tasks'
 author:
   - 'Alessandro Ghedini <alexbio@cpan.org>'
 build_requires:
+  Test::File::Contents: 0
   Test::More: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.31
@@ -15,11 +16,10 @@ meta-spec:
 name: Text-Todo-Simple
 requires:
   Carp: 0
-  Data::Dumper: 0
 resources:
   homepage: http://search.cpan.org/dist/Algorithm-URL-Shorten/
   repository: git://github.com/AlexBio/Algorithm-URL-Shorten.git
-version: 0.09
+version: 0.10
 x_Dist_Zilla:
   plugins:
     -

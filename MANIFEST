@@ -9,6 +9,10 @@ dist.ini
 lib/Text/Todo/Simple.pm
 script/t
 t/00-load.t
+t/01-add.t
+t/02-edit.t
+t/03-do.t
+t/04-remove.t
 t/boilerplate.t
 t/manifest.t
 t/pod-coverage.t

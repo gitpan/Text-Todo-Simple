@@ -8,20 +8,19 @@ use strict;
 
 =head1 NAME
 
-t.pl - Command-line frontend to Text::Todo::Simple
+t - help people finish those damn tasks
 
 =head1 SYNOPSIS
 
- t.pl [OPTIONS] [ACTION] [ARGS]
+ t [OPTIONS] [ACTION] [ARGS]
 
  Actions:
-
    add, a 	TEXT
    do 		ID
    remove, rm 	ID
    list, ls 	[STRING]
    move, mv 	ID NEW
-   edit, ed 	ID TEXT
+   edit, ed 	ID TEXT/REGEX
 
  Options:
    --todo, -t   FILE
@@ -129,7 +128,7 @@ Usage: t.pl [ACTION] [ARGS]
   remove, rm 	ID
   list, ls 	[STRING]
   move, mv 	ID NEW
-  edit, ed 	ID TEXT
+  edit, ed 	ID TEXT/REGEX
 
 See 'perldoc t.pl' for more information.
 END
@@ -147,7 +146,7 @@ add a task to the list
 
 =item B<do> ID
 
-mark a task as done, and move it to done file
+mark a task as done, and move it to the done file
 
 =item B<remove>, B<rm> ID
 
@@ -161,9 +160,10 @@ list tasks containing STRING (can be empty)
 
 move a task from ID to NEW
 
-=item B<edit>, B<ed> ID TEXT
+=item B<edit>, B<ed> ID TEXT/REGEX
 
-replace the task ID with TEXT
+replace the task ID with TEXT/REGEX. if TEXT begins with 's/' it will be 
+treated as a regex (see L<EXAMPLES>).
 
 =back
 
@@ -202,6 +202,61 @@ Default 'help'
 
 =back
 
+=head1 EXAMPLES
+
+Add some tasks
+
+    $ t add Do something boring
+    Added task 1
+    $ t add Do something else
+    Added task 2
+
+List tasks
+
+    $ t ls
+    1 Do something boring
+    2 Do something else
+
+Edit a task
+
+    $ t ed 1 Do something funny
+    Replaced task 1
+
+or
+
+    $ t ed 1 s/boring/funny/
+    Replaced task 1
+
+Mark a task as done
+
+    $ t do 1
+    Done task 1
+
+Delete a task
+
+    $ t rm 2
+    Removed task 2
+
+Count tasks
+
+    $ t ls | wc -l
+    0
+
+=head1 WEB BOOTSTRAP
+
+If you need to use t on a system where it is not installed (and you don't
+want to install it there) you can bootstrap t from the web as follows:
+
+    $ curl -sL  http://sprunge.us/bPMV | perl -
+
+or
+
+    $ wget -q http://sprunge.us/bPMV -O- | perl -
+
+This method is useful since it downloads and runs t without installing or 
+modifying anything, but it could be a little slow as it have to download
+t and its dependencies every time it is run.
+
 =head1 AUTHOR
 
 Alessandro Ghedini, C<< <alexbio at cpan.org> >>
@@ -217,7 +272,7 @@ automatically be notified of progress on your bug as I make changes.
 You can find documentation for this module with the perldoc command.
 
     perldoc Text::Todo::Simple
-    perldoc t.pl
+    perldoc t
 
 You can also look for information at:
 

@@ -2,6 +2,52 @@
 9999-99-99 99:99:99 +0000 HEAD
 ==============================
 
+  commit 29b21ad2f0c0bdad3729667966031fb064e0d462
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Jan 6 21:55:08 2011 +0100
+  
+    bump version
+
+  commit fcd418cd813fae750fc69eecafbd44e96a04c00d
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Jan 6 21:08:21 2011 +0100
+  
+    improve error reporting
+
+  commit 2da523a0fae9a09a22b5451c77922cc7bb8bd53c
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Jan 6 20:53:24 2011 +0100
+  
+    remove debug reference to Data::Dumper
+
+  commit 2c8b85c3e02a939da44cb34316dae4612c100c1b
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Jan 6 20:52:06 2011 +0100
+  
+    add additional tests
+
+  commit c80fc05805cdf2fcc4a0c073462aa6216b998b8a
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Jan 6 19:47:35 2011 +0100
+  
+    remove .gitignore
+
+  commit 8c05ac7f7cd8fdc7ed626f93f10817ec98a6e2fa
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Jan 6 18:55:34 2011 +0100
+  
+    enable regex substitution for action 'edit'
+
+  commit 9088e67a135196df34b5aba1aad101a0cd8ec079
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Jan 6 18:42:15 2011 +0100
+  
+    update documentation 
+
+===============================
+2011-01-05 18:39:09 +0100 v0.09
+===============================
+
   commit cca09c94bc67601f95fc2501ebbd80bccbd5b291
   Author: Alessandro Ghedini <al3xbio@gmail.com>
   Date:   Wed Jan 5 18:39:09 2011 +0100
@@ -12,7 +58,11 @@
   Author: Alessandro Ghedini <al3xbio@gmail.com>
   Date:   Wed Jan 5 18:38:31 2011 +0100
   
-    rename t.pl -> t
+    rename t.pl -> t 
+
+===============================
+2011-01-05 15:33:06 +0100 v0.08
+===============================
 
   commit 0bfc6e5012ca51da58c4925c813ce9f99bbebd99
   Author: Alessandro Ghedini <al3xbio@gmail.com>

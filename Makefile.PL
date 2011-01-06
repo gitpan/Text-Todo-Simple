@@ -9,9 +9,10 @@ use ExtUtils::MakeMaker 6.31;
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'Todo list manager that helps in finishing tasks, not organizing them',
+  'ABSTRACT' => 'help people finish those damn tasks',
   'AUTHOR' => 'Alessandro Ghedini <alexbio@cpan.org>',
   'BUILD_REQUIRES' => {
+    'Test::File::Contents' => '0',
     'Test::More' => '0'
   },
   'CONFIGURE_REQUIRES' => {
@@ -22,10 +23,9 @@ my %WriteMakefileArgs = (
   'LICENSE' => 'perl',
   'NAME' => 'Text::Todo::Simple',
   'PREREQ_PM' => {
-    'Carp' => '0',
-    'Data::Dumper' => '0'
+    'Carp' => '0'
   },
-  'VERSION' => '0.09',
+  'VERSION' => '0.10',
   'test' => {
     'TESTS' => 't/*.t'
   }
