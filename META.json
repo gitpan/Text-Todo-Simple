@@ -33,14 +33,14 @@
    },
    "release_status" : "stable",
    "resources" : {
-      "homepage" : "http://search.cpan.org/dist/Algorithm-URL-Shorten/",
+      "homepage" : "http://search.cpan.org/dist/Text-Todo-Simple/",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/AlexBio/Algorithm-URL-Shorten.git",
-         "web" : "https://github.com/AlexBio/Algorithm-URL-Shorten"
+         "url" : "git://github.com/AlexBio/Text-Todo-Simple.git",
+         "web" : "https://github.com/AlexBio/Text-Todo-Simple"
       }
    },
-   "version" : "0.10",
+   "version" : "0.11",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
@@ -116,6 +116,11 @@
          {
             "class" : "Dist::Zilla::Plugin::MetaResources",
             "name" : "MetaResources",
+            "version" : "4.200000"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::ManifestSkip",
+            "name" : "ManifestSkip",
             "version" : "4.200000"
          },
          {

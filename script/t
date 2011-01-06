@@ -247,11 +247,11 @@ Count tasks
 If you need to use t on a system where it is not installed (and you don't
 want to install it there) you can bootstrap t from the web as follows:
 
-    $ curl -sL  http://sprunge.us/bPMV | perl -
+    $ curl -sL  http://is.gd/kfQLc | perl -
 
 or
 
-    $ wget -q http://sprunge.us/bPMV -O- | perl -
+    $ wget -q http://is.gd/kfQLc -O- | perl -
 
 This method is useful since it downloads and runs t without installing or 
 modifying anything, but it could be a little slow as it have to download

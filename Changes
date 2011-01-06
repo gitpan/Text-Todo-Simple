@@ -2,6 +2,28 @@
 9999-99-99 99:99:99 +0000 HEAD
 ==============================
 
+  commit 9e4eef699725cb04762ee2b4f382f182dec3b967
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Jan 6 22:35:56 2011 +0100
+  
+    include t bundle
+
+  commit a122dfe521825d140d034cb862af735e3b3793fb
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Jan 6 22:27:46 2011 +0100
+  
+    remove carp debug
+
+  commit a300ea841ee49f5871103bb0e090bf023876210a
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Jan 6 22:25:59 2011 +0100
+  
+    fix git urls... why am I so lame? 
+
+===============================
+2011-01-06 22:10:11 +0100 v0.10
+===============================
+
   commit 29b21ad2f0c0bdad3729667966031fb064e0d462
   Author: Alessandro Ghedini <al3xbio@gmail.com>
   Date:   Thu Jan 6 21:55:08 2011 +0100

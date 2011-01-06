@@ -1,6 +1,6 @@
 package Text::Todo::Simple;
 BEGIN {
-  $Text::Todo::Simple::VERSION = '0.10';
+  $Text::Todo::Simple::VERSION = '0.11';
 }
 
 use Carp;
@@ -14,7 +14,7 @@ Text::Todo::Simple - help people finish those damn tasks
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 SYNOPSIS
 
@@ -152,8 +152,6 @@ sub edit {
 	if ($id > scalar @{$tasks} || $id < 0) {
 		croak "Err: Invalid ID.\n";
 	}
-	
-	carp $id;
 
 	if ($new =~ m/^s\//) {
 		eval '@$tasks[$id-1] =~ '.$new;

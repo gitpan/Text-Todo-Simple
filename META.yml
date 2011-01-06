@@ -17,9 +17,9 @@ name: Text-Todo-Simple
 requires:
   Carp: 0
 resources:
-  homepage: http://search.cpan.org/dist/Algorithm-URL-Shorten/
-  repository: git://github.com/AlexBio/Algorithm-URL-Shorten.git
-version: 0.10
+  homepage: http://search.cpan.org/dist/Text-Todo-Simple/
+  repository: git://github.com/AlexBio/Text-Todo-Simple.git
+version: 0.11
 x_Dist_Zilla:
   plugins:
     -
@@ -81,6 +81,10 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::MetaResources
       name: MetaResources
+      version: 4.200000
+    -
+      class: Dist::Zilla::Plugin::ManifestSkip
+      name: ManifestSkip
       version: 4.200000
     -
       class: Dist::Zilla::Plugin::MetaConfig
