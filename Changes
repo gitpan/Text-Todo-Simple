@@ -2,6 +2,22 @@
 9999-99-99 99:99:99 +0000 HEAD
 ==============================
 
+  commit cc6dbd4235c433cf0ccbd2083f2c23d87eb709c0
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Sun Jan 9 18:43:21 2011 +0100
+  
+    bump version
+
+  commit 67f61705b749e068182ff03c88b4aab7c00009af
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Sun Jan 9 13:26:12 2011 +0100
+  
+    fix MANIFEST.SKIP path 
+
+===============================
+2011-01-06 23:02:59 +0100 v0.12
+===============================
+
   commit 8d2b6f0bdcca560ea4e9eb5e9c405cf0894607bb
   Author: Alessandro Ghedini <al3xbio@gmail.com>
   Date:   Thu Jan 6 23:02:59 2011 +0100

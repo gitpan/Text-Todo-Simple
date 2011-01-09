@@ -20,7 +20,7 @@ requires:
 resources:
   homepage: http://search.cpan.org/dist/Text-Todo-Simple/
   repository: git://github.com/AlexBio/Text-Todo-Simple.git
-version: 0.12
+version: 0.13
 x_Dist_Zilla:
   plugins:
     -

@@ -20,8 +20,7 @@ my %WriteMakefileArgs = (
   },
   'DISTNAME' => 'Text-Todo-Simple',
   'EXE_FILES' => [
-    'bin/t',
-    'bin/t.bundle'
+    'bin/t'
   ],
   'LICENSE' => 'perl',
   'NAME' => 'Text::Todo::Simple',
@@ -29,7 +28,7 @@ my %WriteMakefileArgs = (
     'Carp' => '0',
     'Getopt::Long' => '0'
   },
-  'VERSION' => '0.12',
+  'VERSION' => '0.13',
   'test' => {
     'TESTS' => 't/*.t'
   }
