@@ -1,6 +1,6 @@
 package Text::Todo::Simple;
 BEGIN {
-  $Text::Todo::Simple::VERSION = '0.13';
+  $Text::Todo::Simple::VERSION = '0.14';
 }
 
 use Carp;
@@ -10,11 +10,11 @@ use strict;
 
 =head1 NAME
 
-Text::Todo::Simple - help people finish those damn tasks
+Text::Todo::Simple - Help people finish those damn tasks
 
 =head1 VERSION
 
-version 0.13
+version 0.14
 
 =head1 SYNOPSIS
 
@@ -24,16 +24,18 @@ tasks instead of completing them.
 
     use Text::Todo::Simple;
 
-    my $todo = Text::Todo::Simple->new(todo_file => $todo_file,
-				       done_file => $done_file);
+    my $todo = Text::Todo::Simple->new(
+      todo_file => $todo_file,
+      done_file => $done_file
+    );
 
-    $todo->add('Something to do');
-    $todo->list('Something');
-    $todo->edit(1, 'Something to do and more');
-    $todo->add('Something else to do');
-    $todo->move(2, 1);
-    $todo->remove(2);
-    $todo->do(1);
+    $todo -> add('Something to do');
+    $todo -> list('Something');
+    $todo -> edit(1, 'Something to do and more');
+    $todo -> add('Something else to do');
+    $todo -> move(2, 1);
+    $todo -> remove(2);
+    $todo -> do(1);
 
 =head1 DESCRIPTION
 
@@ -57,7 +59,7 @@ Create a todo object
 
 sub new {
 	my ($class, %args) = @_;
- 
+
 	my $self = bless({%args}, $class);
 
 	return $self;
@@ -90,7 +92,7 @@ sub do {
 
 	my $task = @{ _read($self -> {'todo_file'}) }[$id-1];
 	_append($self -> {'done_file'}, $task);
-	
+
 	$self -> remove($id);
 }
 
@@ -128,7 +130,7 @@ sub remove {
 	my ($self, $id) = @_;
 
 	my $tasks = _read($self -> {'todo_file'});
-	
+
 	if ($id > scalar @{$tasks} || $id < 0) {
 		croak "Err: Invalid ID.\n";
 	}
@@ -176,7 +178,7 @@ sub move {
 	if ($id > scalar @{$tasks} || $id < 0) {
 		croak "Err: Invalid ID (source).\n";
 	}
-	
+
 	if ($new > scalar @{$tasks} || $new < 0) {
 		croak "Err: Invalid ID (dest).\n";
 	}
@@ -184,7 +186,7 @@ sub move {
 	my $task  = @$tasks[$id-1];
 
 	splice @$tasks, $id-1, 1;
-	
+
 	splice @$tasks, $new-1, 0, $task;
 
 	_write($self -> {'todo_file'}, $tasks);
@@ -248,46 +250,7 @@ sub _write {
 
 =head1 AUTHOR
 
-Alessandro Ghedini, C<< <alexbio at cpan.org> >>
-
-=head1 BUGS
-
-Please report any bugs or feature requests to C<bug-text-todo-simple at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Text-Todo-Simple>.  I will be notified, and then you'll
-automatically be notified of progress on your bug as I make changes.
-
-=head1 SUPPORT
-
-You can find documentation for this module with the perldoc command.
-
-    perldoc Text::Todo::Simple
-    perldoc t
-
-You can also look for information at:
-
-=over 4
-
-=item * GitHub page
-
-L<http://github.com/AlexBio/Text-Todo-Simple>
-
-=item * RT: CPAN's request tracker
-
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Text-Todo-Simple>
-
-=item * AnnoCPAN: Annotated CPAN documentation
-
-L<http://annocpan.org/dist/Text-Todo-Simple>
-
-=item * CPAN Ratings
-
-L<http://cpanratings.perl.org/d/Text-Todo-Simple>
-
-=item * Search CPAN
-
-L<http://search.cpan.org/dist/Text-Todo-Simple/>
-
-=back
+Alessandro Ghedini <alexbio@cpan.org>
 
 =head1 SEE ALSO
 

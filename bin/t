@@ -8,23 +8,23 @@ use strict;
 
 =head1 NAME
 
-t - help people finish those damn tasks
+t - Help people finish those damn tasks
 
 =head1 VERSION
 
-version 0.13
+version 0.14
 
 =head1 SYNOPSIS
 
  t [OPTIONS] [ACTION] [ARGS]
 
  Actions:
-   add, a 	TEXT
-   do 		ID
-   remove, rm 	ID
-   list, ls 	[STRING]
-   move, mv 	ID NEW
-   edit, ed 	ID TEXT/REGEX
+   add, a       TEXT
+   do           ID
+   remove, rm   ID
+   list, ls     [STRING]
+   move, mv     ID NEW
+   edit, ed     ID TEXT/REGEX
 
  Options:
    --todo, -t   FILE
@@ -42,15 +42,19 @@ if ($^O eq 'MSWin32') {
 	$default_done = $ENV{HOME}."/.done";
 }
 
-my $todo_file 	   = $ENV{TODO_FILE}    ? $ENV{TODO_FILE}    : $default_todo;
-my $done_file 	   = $ENV{DONE_FILE}    ? $ENV{DONE_FILE}    : $default_done;
-my $default_action = $ENV{TODO_DEFAULT} ? $ENV{TODO_DEFAULT} : 'help';
+my $todo_file		= $ENV{TODO_FILE}    ? $ENV{TODO_FILE}    : $default_todo;
+my $done_file		= $ENV{DONE_FILE}    ? $ENV{DONE_FILE}    : $default_done;
+my $default_action	= $ENV{TODO_DEFAULT} ? $ENV{TODO_DEFAULT} : 'help';
 
-GetOptions ("todo=s" => \$todo_file,
-	    "done=s" => \$done_file);
+GetOptions (
+	"todo=s" => \$todo_file,
+	"done=s" => \$done_file
+);
 
-my $todo = Text::Todo::Simple -> new(todo_file => $todo_file,
-				     done_file => $done_file);
+my $todo = Text::Todo::Simple -> new(
+	todo_file => $todo_file,
+	done_file => $done_file
+);
 
 my %actions = (
 	add      => \&add,
@@ -113,11 +117,16 @@ sub move {
 
 sub edit {
 	my $id  = shift;
-	
+
+	if (!defined $id) {
+		system($ENV{'EDITOR'}, $todo -> {'todo_file'});
+		return;
+	}
+
 	my $task = join ' ', @_;
 
 	chomp $task;
-	
+
 	$todo -> edit($id, $task);
 
 	print "Replaced task $id\n";
@@ -166,7 +175,7 @@ move a task from ID to NEW
 
 =item B<edit>, B<ed> ID TEXT/REGEX
 
-replace the task ID with TEXT/REGEX. if TEXT begins with 's/' it will be 
+replace the task ID with TEXT/REGEX. if TEXT begins with 's/' it will be
 treated as a regex (see L<EXAMPLES>).
 
 =back
@@ -257,52 +266,13 @@ or
 
     $ wget -q http://is.gd/kfVKP -O- | perl -
 
-This method is useful since it downloads and runs t without installing or 
+This method is useful since it downloads and runs t without installing or
 modifying anything, but it could be a little slow as it have to download
 t and its dependencies every time it is run.
 
 =head1 AUTHOR
 
-Alessandro Ghedini, C<< <alexbio at cpan.org> >>
-
-=head1 BUGS
-
-Please report any bugs or feature requests to C<bug-text-todo-simple at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Text-Todo-Simple>.  I will be notified, and then you'll
-automatically be notified of progress on your bug as I make changes.
-
-=head1 SUPPORT
-
-You can find documentation for this module with the perldoc command.
-
-    perldoc Text::Todo::Simple
-    perldoc t
-
-You can also look for information at:
-
-=over 4
-
-=item * GitHub page
-
-L<http://github.com/AlexBio/Text-Todo-Simple>
-
-=item * RT: CPAN's request tracker
-
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Text-Todo-Simple>
-
-=item * AnnoCPAN: Annotated CPAN documentation
-
-L<http://annocpan.org/dist/Text-Todo-Simple>
-
-=item * CPAN Ratings
-
-L<http://cpanratings.perl.org/d/Text-Todo-Simple>
-
-=item * Search CPAN
-
-L<http://search.cpan.org/dist/Text-Todo-Simple/>
-
-=back
+Alessandro Ghedini <alexbio@cpan.org>
 
 =head1 SEE ALSO
 

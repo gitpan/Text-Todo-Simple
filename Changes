@@ -2,6 +2,58 @@
 9999-99-99 99:99:99 +0000 HEAD
 ==============================
 
+  commit f0ad100f92efcd7ed521efd125a028a4db8da55f
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Mon Mar 7 16:13:28 2011 +0100
+  
+    bump version
+
+  commit 75d9978ea9592edd32268ecc4511c32c20b5224c
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Mon Mar 7 16:13:06 2011 +0100
+  
+    update bundle
+
+  commit 8098163a41fb101132e0964d4b047c9094e47a47
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Mon Mar 7 16:11:08 2011 +0100
+  
+    fix spacing
+
+  commit 7eb2564b4b233a140ddebd60ca5fce7b13cbdb1e
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Mon Mar 7 15:51:22 2011 +0100
+  
+    open TODO_FILE if edit is invoked without arguments
+
+  commit 3f6ef0de043ac6d836ff31312d3d6b943dc68aed
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Mon Mar 7 15:45:24 2011 +0100
+  
+    fix executable permission
+
+  commit 48822226e3e649732f2252d90b89bd85d5e7a428
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Mon Mar 7 15:42:35 2011 +0100
+  
+    purge cruft from docs
+
+  commit 8d6a1b01ade68e6a25f9da36f7f97f3de930126f
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Mon Mar 7 15:41:24 2011 +0100
+  
+    fix lower case-starting abstract
+
+  commit 56ac7694e29f9787378dacc51d03a9347fff997a
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Mon Mar 7 15:40:28 2011 +0100
+  
+    add @GitHub bundle 
+
+===============================
+2011-01-09 18:43:21 +0100 v0.13
+===============================
+
   commit cc6dbd4235c433cf0ccbd2083f2c23d87eb709c0
   Author: Alessandro Ghedini <al3xbio@gmail.com>
   Date:   Sun Jan 9 18:43:21 2011 +0100

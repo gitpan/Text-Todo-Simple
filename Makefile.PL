@@ -9,7 +9,7 @@ use ExtUtils::MakeMaker 6.31;
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'help people finish those damn tasks',
+  'ABSTRACT' => 'Help people finish those damn tasks',
   'AUTHOR' => 'Alessandro Ghedini <alexbio@cpan.org>',
   'BUILD_REQUIRES' => {
     'Test::File::Contents' => '0',
@@ -28,7 +28,7 @@ my %WriteMakefileArgs = (
     'Carp' => '0',
     'Getopt::Long' => '0'
   },
-  'VERSION' => '0.13',
+  'VERSION' => '0.14',
   'test' => {
     'TESTS' => 't/*.t'
   }
