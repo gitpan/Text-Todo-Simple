@@ -1,7 +1,6 @@
 #!/usr/bin/perl
 
 use Text::Todo::Simple;
-use Getopt::Long;
 
 use warnings;
 use strict;
@@ -12,7 +11,7 @@ t - Help people finish those damn tasks
 
 =head1 VERSION
 
-version 0.14
+version 0.15
 
 =head1 SYNOPSIS
 
@@ -32,122 +31,7 @@ version 0.14
 
 =cut
 
-my ($default_todo, $default_done);
-
-if ($^O eq 'MSWin32') {
-	$default_todo = $ENV{USERPROFILE}."\\todo.txt";
-	$default_done = $ENV{USERPROFILE}."\\done.txt";
-} else {
-	$default_todo = $ENV{HOME}."/.todo";
-	$default_done = $ENV{HOME}."/.done";
-}
-
-my $todo_file		= $ENV{TODO_FILE}    ? $ENV{TODO_FILE}    : $default_todo;
-my $done_file		= $ENV{DONE_FILE}    ? $ENV{DONE_FILE}    : $default_done;
-my $default_action	= $ENV{TODO_DEFAULT} ? $ENV{TODO_DEFAULT} : 'help';
-
-GetOptions (
-	"todo=s" => \$todo_file,
-	"done=s" => \$done_file
-);
-
-my $todo = Text::Todo::Simple -> new(
-	todo_file => $todo_file,
-	done_file => $done_file
-);
-
-my %actions = (
-	add      => \&add,
-	do       => \&do,
-	remove	 => \&remove,
-	list	 => \&list,
-	move	 => \&move,
-	edit	 => \&edit,
-	help	 => \&help
-);
-
-my %aliases = (
-	a    => 'add',
-	rm   => 'remove',
-	ls   => 'list',
-	mv   => 'move',
-	ed   => 'edit'
-);
-
-my $action = $ARGV[0];
-
-if ($action && $aliases{$action}) {
-	$action = $aliases{$action};
-	shift @ARGV;
-} elsif (!$action || !$actions{$action}) {
-	$action = $default_action;
-} elsif ($actions{$action}) {
-	shift @ARGV;
-}
-
-$actions{$action} -> (@ARGV);
-
-sub add {
-	my $task = join ' ', @_;
-
-	my $i = $todo -> add($task);
-
-	print "Added task $i\n";
-}
-
-sub do {
-	$todo -> do(@_);
-
-	print "Done task ".shift()."\n";
-}
-
-sub remove {
-	$todo -> remove(@_);
-
-	print "Removed task ".shift()."\n";
-}
-
-sub list { $todo -> list(@_); }
-
-sub move {
-	$todo -> move(@_);
-
-	print "Moved task ".$_[0]." to ".$_[1]."\n";
-}
-
-sub edit {
-	my $id  = shift;
-
-	if (!defined $id) {
-		system($ENV{'EDITOR'}, $todo -> {'todo_file'});
-		return;
-	}
-
-	my $task = join ' ', @_;
-
-	chomp $task;
-
-	$todo -> edit($id, $task);
-
-	print "Replaced task $id\n";
-}
-
-sub help {
-	my $usage = <<END;
-Usage: t.pl [ACTION] [ARGS]
-
- Actions:
-  add, a 	TEXT
-  remove, rm 	ID
-  list, ls 	[STRING]
-  move, mv 	ID NEW
-  edit, ed 	ID TEXT/REGEX
-
-See 'perldoc t.pl' for more information.
-END
-
-	print $usage;
-}
+Text::Todo::Simple -> run;
 
 =head1 ACTION
 
@@ -254,21 +138,6 @@ Count tasks
 
     $ t ls | wc -l
     0
-
-=head1 WEB BOOTSTRAP
-
-If you need to use t on a system where it is not installed (and you don't
-want to install it there) you can bootstrap t from the web as follows:
-
-    $ curl -sL  http://is.gd/kfVKP | perl -
-
-or
-
-    $ wget -q http://is.gd/kfVKP -O- | perl -
-
-This method is useful since it downloads and runs t without installing or
-modifying anything, but it could be a little slow as it have to download
-t and its dependencies every time it is run.
 
 =head1 AUTHOR
 

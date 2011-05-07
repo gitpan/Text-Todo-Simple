@@ -4,7 +4,7 @@ use warnings;
 
 
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
@@ -12,11 +12,12 @@ my %WriteMakefileArgs = (
   'ABSTRACT' => 'Help people finish those damn tasks',
   'AUTHOR' => 'Alessandro Ghedini <alexbio@cpan.org>',
   'BUILD_REQUIRES' => {
+    'App::Cmd::Tester' => '0',
     'Test::File::Contents' => '0',
     'Test::More' => '0'
   },
   'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+    'ExtUtils::MakeMaker' => '6.30'
   },
   'DISTNAME' => 'Text-Todo-Simple',
   'EXE_FILES' => [
@@ -25,10 +26,10 @@ my %WriteMakefileArgs = (
   'LICENSE' => 'perl',
   'NAME' => 'Text::Todo::Simple',
   'PREREQ_PM' => {
-    'Carp' => '0',
-    'Getopt::Long' => '0'
+    'App::Cmd::Setup' => '0',
+    'Carp' => '0'
   },
-  'VERSION' => '0.14',
+  'VERSION' => '0.15',
   'test' => {
     'TESTS' => 't/*.t'
   }

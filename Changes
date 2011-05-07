@@ -2,6 +2,52 @@
 9999-99-99 99:99:99 +0000 HEAD
 ==============================
 
+  commit 03790e9ba8dc0d0345251b4df46bed1e13f08d07
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Sat May 7 17:14:32 2011 +0200
+  
+    bump version
+
+  commit 092f92cf6d869bf157d149e8a5b0938720aae9be
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Sat May 7 16:52:07 2011 +0200
+  
+    update test suite
+
+  commit f4b8098cc85ee3443dfd1336c0edfe85be4cdf02
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Sat May 7 16:27:20 2011 +0200
+  
+    fix inconsistency between _append and _write methods
+
+  commit becdd8d6b95e8a3ea247cbdc2b6fd4812ed6c9ce
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Sat May 7 15:44:30 2011 +0200
+  
+    refactor file methods
+
+  commit 8ea8cbc0ccbc936ea718a1be1b3819c0929c132b
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Sat May 7 15:43:36 2011 +0200
+  
+    switch to App::Cmd
+
+  commit cbbf2c4b869a65661464082e61c305cc14896856
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Sat May 7 12:35:35 2011 +0200
+  
+    remove bundle
+
+  commit c970f7206dc2899210bb80be77b21483498bca87
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Mon Apr 25 18:50:40 2011 +0200
+  
+    use Author::ALEXBIO dzil bundle 
+
+===============================
+2011-03-07 16:13:28 +0100 v0.14
+===============================
+
   commit f0ad100f92efcd7ed521efd125a028a4db8da55f
   Author: Alessandro Ghedini <al3xbio@gmail.com>
   Date:   Mon Mar 7 16:13:28 2011 +0100

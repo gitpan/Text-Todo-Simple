@@ -1,9 +1,9 @@
 package Text::Todo::Simple;
 BEGIN {
-  $Text::Todo::Simple::VERSION = '0.14';
+  $Text::Todo::Simple::VERSION = '0.15';
 }
 
-use Carp;
+use App::Cmd::Setup -app;
 
 use warnings;
 use strict;
@@ -14,28 +14,13 @@ Text::Todo::Simple - Help people finish those damn tasks
 
 =head1 VERSION
 
-version 0.14
+version 0.15
 
 =head1 SYNOPSIS
 
 Text::Todo::Simple is a simple and basic todo list manager, without all
 the additional features that make people spending more time on organizing
 tasks instead of completing them.
-
-    use Text::Todo::Simple;
-
-    my $todo = Text::Todo::Simple->new(
-      todo_file => $todo_file,
-      done_file => $done_file
-    );
-
-    $todo -> add('Something to do');
-    $todo -> list('Something');
-    $todo -> edit(1, 'Something to do and more');
-    $todo -> add('Something else to do');
-    $todo -> move(2, 1);
-    $todo -> remove(2);
-    $todo -> do(1);
 
 =head1 DESCRIPTION
 
@@ -49,203 +34,27 @@ the tasks.
 
 Text::Todo::Simple was inspired by stevelosh' t project (L<http://stevelosh.com/projects/t/>).
 
-=head1 METHODS
-
-=head2 new
-
-Create a todo object
-
 =cut
 
-sub new {
-	my ($class, %args) = @_;
+sub global_opt_spec {
+	my ($default_todo, $default_done);
 
-	my $self = bless({%args}, $class);
-
-	return $self;
-}
-
-=head2 add( $task )
-
-Add $task to the todo list
-
-=cut
-
-sub add {
-	my ($self, $task) = @_;
-
-	_append($self -> {'todo_file'}, $task);
-
-	my $lenght = scalar @{ _read($self -> {'todo_file'}) };
-
-	return $lenght;
-}
-
-=head2 do( $id )
-
-Move $id task to done file
-
-=cut
-
-sub do {
-	my ($self, $id) = @_;
-
-	my $task = @{ _read($self -> {'todo_file'}) }[$id-1];
-	_append($self -> {'done_file'}, $task);
-
-	$self -> remove($id);
-}
-
-=head2 list( $grep )
-
-List task containing $grep (optional)
-
-=cut
-
-sub list {
-	my ($self, $grep) = @_;
-
-	my $tasks = _read($self -> {'todo_file'});
-
-	for (my $i = 0; $i < scalar @$tasks; $i++) {
-		substr(@$tasks[$i], 0, 0, ($i+1)." ");
-	}
-
-	my $find = $grep ? $grep : "(.*?)";
-
-	my @out = grep(/$find/, @{ $tasks });
-
-	foreach my $item(@out) {
-		print $item, "\n";
-	}
-}
-
-=head2 remove( $id )
-
-Remove $id task
-
-=cut
-
-sub remove {
-	my ($self, $id) = @_;
-
-	my $tasks = _read($self -> {'todo_file'});
-
-	if ($id > scalar @{$tasks} || $id < 0) {
-		croak "Err: Invalid ID.\n";
-	}
-
-	splice @$tasks, $id-1, 1;
-
-	_write($self -> {'todo_file'}, $tasks);
-}
-
-=head2 edit( $id, $new )
-
-Replace $id task with $new
-
-=cut
-
-sub edit {
-	my ($self, $id, $new) = @_;
-
-	my $tasks = _read($self -> {'todo_file'});
-
-	if ($id > scalar @{$tasks} || $id < 0) {
-		croak "Err: Invalid ID.\n";
-	}
-
-	if ($new =~ m/^s\//) {
-		eval '@$tasks[$id-1] =~ '.$new;
+	if ($^O eq 'MSWin32') {
+		$default_todo = $ENV{USERPROFILE}."\\todo.txt";
+		$default_done = $ENV{USERPROFILE}."\\done.txt";
 	} else {
-		@{$tasks}[$id-1] = $new;
+		$default_todo = $ENV{HOME}."/.todo";
+		$default_done = $ENV{HOME}."/.done";
 	}
 
-	_write($self -> {'todo_file'}, $tasks);
-}
+	my $todo_file		= $ENV{TODO_FILE}    ? $ENV{TODO_FILE}    : $default_todo;
+	my $done_file		= $ENV{DONE_FILE}    ? $ENV{DONE_FILE}    : $default_done;
+	my $default_action	= $ENV{TODO_DEFAULT} ? $ENV{TODO_DEFAULT} : 'help';
 
-=head2 move( $id, $new )
-
-Move $id task to $new
-
-=cut
-
-sub move {
-	my ($self, $id, $new) = @_;
-
-	my $tasks = _read($self -> {'todo_file'});
-
-	if ($id > scalar @{$tasks} || $id < 0) {
-		croak "Err: Invalid ID (source).\n";
-	}
-
-	if ($new > scalar @{$tasks} || $new < 0) {
-		croak "Err: Invalid ID (dest).\n";
-	}
-
-	my $task  = @$tasks[$id-1];
-
-	splice @$tasks, $id-1, 1;
-
-	splice @$tasks, $new-1, 0, $task;
-
-	_write($self -> {'todo_file'}, $tasks);
-}
-
-=head1 INTERNAL METHODS
-
-=head2 _read( $file )
-
-Read file to array reference
-
-=cut
-
-sub _read {
-	my $file = shift;
-
-	open(FILE, "<$file") or croak "Err: Unable to open '$file' for read: $!.\n";
-	my @data = <FILE>;
-	close(FILE);
-
-	foreach my $item(@data) {
-		chomp $item;
-	}
-
-	return \@data;
-}
-
-=head2 _append( $file, $data )
-
-Append string to file
-
-=cut
-
-sub _append {
-	my ($file, $data) = @_;
-
-	chomp $data;
-
-	open(FILE, ">>$file") or croak "Err: Unable to open '$file' for append: $!.\n";
-	print FILE $data, "\n";
-	close(FILE);
-}
-
-=head2 _write( $file, $data )
-
-Write array (by reference) to file
-
-=cut
-
-sub _write {
-	my ($file, $data) = @_;
-
-	open(FILE, ">$file") or croak "Err: Unable to open '$file' for write: $!.\n";
-
-	foreach my $item(@{ $data }) {
-		print FILE "$item\n";
-	}
-
-	close(FILE);
+	return (
+		[ "todo=s", "set the login email",    { default => $todo_file } ],
+		[ "done=s", "set the login password", { default => $done_file } ],
+	);
 }
 
 =head1 AUTHOR
