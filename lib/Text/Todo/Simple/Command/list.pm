@@ -1,6 +1,6 @@
 package Text::Todo::Simple::Command::list;
 BEGIN {
-  $Text::Todo::Simple::Command::list::VERSION = '0.15';
+  $Text::Todo::Simple::Command::list::VERSION = '0.16';
 }
 
 use Text::Todo::Simple -command;
@@ -14,7 +14,7 @@ Text::Todo::Simple::Command::list - List your tasks
 
 =head1 VERSION
 
-version 0.15
+version 0.16
 
 =head1 SYNOPSIS
 
@@ -29,6 +29,8 @@ sub abstract { 'list your tasks' }
 sub usage_desc {
 	return '%c list %o [ str ]';
 }
+
+sub command_names { qw/list ls --list -l/ }
 
 sub execute {
 	my ($self, $opt, $args) = @_;
@@ -47,10 +49,6 @@ sub execute {
 		print $string if m/$grep/;
 	}
 }
-
-=head1 OPTIONS
-
-
 
 =head1 AUTHOR
 

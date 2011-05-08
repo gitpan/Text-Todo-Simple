@@ -2,6 +2,28 @@
 9999-99-99 99:99:99 +0000 HEAD
 ==============================
 
+  commit f6247c00ac3d0c926045eb626a638b4b129710d7
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Sun May 8 14:53:58 2011 +0200
+  
+    bump version
+
+  commit 79a501cbb8c33d5b07263e477d6cac3d99417a38
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Sun May 8 00:40:40 2011 +0200
+  
+    update docs
+
+  commit 5282767b874907bb6745e066ca93015d9c68d8d6
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Sun May 8 00:34:45 2011 +0200
+  
+    add command aliases 
+
+===============================
+2011-05-07 17:14:32 +0200 v0.15
+===============================
+
   commit 03790e9ba8dc0d0345251b4df46bed1e13f08d07
   Author: Alessandro Ghedini <al3xbio@gmail.com>
   Date:   Sat May 7 17:14:32 2011 +0200

@@ -1,6 +1,6 @@
 package Text::Todo::Simple::Command::add;
 BEGIN {
-  $Text::Todo::Simple::Command::add::VERSION = '0.15';
+  $Text::Todo::Simple::Command::add::VERSION = '0.16';
 }
 
 use Text::Todo::Simple -command;
@@ -14,7 +14,7 @@ Text::Todo::Simple::Command::add - Add a task to the list
 
 =head1 VERSION
 
-version 0.15
+version 0.16
 
 =head1 SYNOPSIS
 
@@ -30,6 +30,8 @@ sub usage_desc {
 	return '%c add %o task ...';
 }
 
+sub command_names { qw/add --add -a/ }
+
 sub execute {
 	my ($self, $opt, $args) = @_;
 
@@ -41,10 +43,6 @@ sub execute {
 	my $id = scalar @{ $self -> _read($todo) };
 	print "Added task '$id'\n";
 }
-
-=head1 OPTIONS
-
-
 
 =head1 AUTHOR
 

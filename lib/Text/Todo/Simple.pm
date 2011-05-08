@@ -1,6 +1,6 @@
 package Text::Todo::Simple;
 BEGIN {
-  $Text::Todo::Simple::VERSION = '0.15';
+  $Text::Todo::Simple::VERSION = '0.16';
 }
 
 use App::Cmd::Setup -app;
@@ -14,7 +14,7 @@ Text::Todo::Simple - Help people finish those damn tasks
 
 =head1 VERSION
 
-version 0.15
+version 0.16
 
 =head1 SYNOPSIS
 
@@ -67,7 +67,7 @@ L<Text::Todo>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2010 Alessandro Ghedini.
+Copyright 2011 Alessandro Ghedini.
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of either: the GNU General Public License as published

@@ -22,7 +22,7 @@ resources:
   bugtracker: https://github.com/AlexBio/Text-Todo-Simple/issues
   homepage: http://search.cpan.org/dist/Text-Todo-Simple/
   repository: git://github.com/AlexBio/Text-Todo-Simple.git
-version: 0.15
+version: 0.16
 x_Dist_Zilla:
   plugins:
     -

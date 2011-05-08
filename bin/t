@@ -11,7 +11,7 @@ t - Help people finish those damn tasks
 
 =head1 VERSION
 
-version 0.15
+version 0.16
 
 =head1 SYNOPSIS
 
@@ -35,104 +35,93 @@ Text::Todo::Simple -> run;
 
 =head1 ACTION
 
-=over 4
+=head2 add, a, --add, -a
 
-=item B<add>, B<a> TEXT
+Add a task to the listv
 
-add a task to the list
+=head2 do, --do, -d
 
-=item B<do> ID
+Finish a task
 
-mark a task as done, and move it to the done file
+=head2 remove, rm, --remove, -r
 
-=item B<remove>, B<rm> ID
+Remove a task
 
-remove a task from the list
+=head2 list, ls, --list, -l
 
-=item B<list>, B<ls> [STRING]
+List your tasks
 
-list tasks containing STRING (can be empty)
+=head2 move, mv, --move, -m
 
-=item B<move>, B<mv> ID NEW
+Move a task to a new position
 
-move a task from ID to NEW
+=head2 edit, ed, --edit, -e
 
-=item B<edit>, B<ed> ID TEXT/REGEX
+Edit a task
 
-replace the task ID with TEXT/REGEX. if TEXT begins with 's/' it will be
-treated as a regex (see L<EXAMPLES>).
+=head1 OPTIONS
 
-=back
+=head2 --todo, -t
 
-=head1 ACTION
+set the todo file (takes precedence on configuration)
 
-=over 4
+=head2 --done, -d
 
-=item B<--todo>, B<-t> FILE
-
-set todo file (takes precedence on configuration)
-
-=item B<--done>, B<-d> FILE
-
-set todo file (takes precedence on configuration)
-
-=back
+set the done file (takes precedence on configuration)
 
 =head1 CONFIGURATION
 
 The following environment variables will affect t.pl behaviour:
 
-=over
-
-=item B<TODO_FILE>
+=head2 TODO_FILE
 
 Specifies the path of the todo file. Default ~/.todo
 
-=item B<DONE_FILE>
+=head2 DONE_FILE
 
 Specifies the path of the done file. Default ~/.done
 
-=item B<TODO_DEFAULT>
-
-Set the default action, this will be used when no action is specified.
-Default 'help'
-
-=back
-
 =head1 EXAMPLES
+
+Get help
+
+    $ t commands
+    ...
+    $ t help add
+    ...
 
 Add some tasks
 
     $ t add Do something boring
-    Added task 1
+    Added task '1'
     $ t add Do something else
-    Added task 2
+    Added task '2'
 
 List tasks
 
     $ t ls
-    1 Do something boring
-    2 Do something else
+    1: Do something boring
+    2: Do something else
 
 Edit a task
 
     $ t ed 1 Do something funny
-    Replaced task 1
+    Replaced task '1'
 
 or
 
     $ t ed 1 s/boring/funny/
-    Replaced task 1
+    Replaced task '1'
 
 Mark a task as done
 
     $ t do 1
-    Done task 1
+    Done task '1'
 
 Delete a task
 
     $ t rm 2
-    Removed task 2
+    Removed task '2'
 
 Count tasks
 
@@ -149,7 +138,7 @@ L<Text::Todo::Simple>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2010 Alessandro Ghedini.
+Copyright 2011 Alessandro Ghedini.
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of either: the GNU General Public License as published

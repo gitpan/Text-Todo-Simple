@@ -1,6 +1,6 @@
 package Text::Todo::Simple::Command::edit;
 BEGIN {
-  $Text::Todo::Simple::Command::edit::VERSION = '0.15';
+  $Text::Todo::Simple::Command::edit::VERSION = '0.16';
 }
 
 use Text::Todo::Simple -command;
@@ -14,7 +14,7 @@ Text::Todo::Simple::Command::edit - Edit a task
 
 =head1 VERSION
 
-version 0.15
+version 0.16
 
 =head1 SYNOPSIS
 
@@ -30,6 +30,8 @@ sub abstract { 'edit a task' }
 sub usage_desc {
 	return '%c edit %o id task ...';
 }
+
+sub command_names { qw/edit ed --edit -e/ }
 
 sub execute {
 	my ($self, $opt, $args) = @_;
@@ -51,10 +53,6 @@ sub execute {
 	$self -> _write($todo, $tasks);
 	print "Modified task '$id'\n";
 }
-
-=head1 OPTIONS
-
-
 
 =head1 AUTHOR
 

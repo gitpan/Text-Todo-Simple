@@ -1,6 +1,6 @@
 package Text::Todo::Simple::Command::remove;
 BEGIN {
-  $Text::Todo::Simple::Command::remove::VERSION = '0.15';
+  $Text::Todo::Simple::Command::remove::VERSION = '0.16';
 }
 
 use Text::Todo::Simple -command;
@@ -14,7 +14,7 @@ Text::Todo::Simple::Command::remove - Remove a task
 
 =head1 VERSION
 
-version 0.15
+version 0.16
 
 =head1 SYNOPSIS
 
@@ -29,6 +29,8 @@ sub abstract { 'remove a task' }
 sub usage_desc {
 	return '%c remove %o id';
 }
+
+sub command_names { qw/remove rm --remove -r/ }
 
 sub execute {
 	my ($self, $opt, $args) = @_;
@@ -45,10 +47,6 @@ sub execute {
 	$self -> _write($todo, $tasks);
 	print "Removed task '$id'\n";
 }
-
-=head1 OPTIONS
-
-
 
 =head1 AUTHOR
 

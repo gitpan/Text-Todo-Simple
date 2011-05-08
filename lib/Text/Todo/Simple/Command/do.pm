@@ -1,6 +1,6 @@
 package Text::Todo::Simple::Command::do;
 BEGIN {
-  $Text::Todo::Simple::Command::do::VERSION = '0.15';
+  $Text::Todo::Simple::Command::do::VERSION = '0.16';
 }
 
 use Text::Todo::Simple -command;
@@ -10,11 +10,11 @@ use strict;
 
 =head1 NAME
 
-Text::Todo::Simple::Command::remove - Finish a task
+Text::Todo::Simple::Command::do - Finish a task
 
 =head1 VERSION
 
-version 0.15
+version 0.16
 
 =head1 SYNOPSIS
 
@@ -31,6 +31,8 @@ sub usage_desc {
 	return '%c do %o id';
 }
 
+sub command_names { qw/do --do -d/ }
+
 sub execute {
 	my ($self, $opt, $args) = @_;
 
@@ -46,10 +48,6 @@ sub execute {
 	$self -> _write($todo, $tasks);
 	print "Done task '$id'\n";
 }
-
-=head1 OPTIONS
-
-
 
 =head1 AUTHOR
 
