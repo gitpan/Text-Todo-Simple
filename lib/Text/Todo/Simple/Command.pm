@@ -1,14 +1,12 @@
 package Text::Todo::Simple::Command;
-BEGIN {
-  $Text::Todo::Simple::Command::VERSION = '0.16';
+{
+  $Text::Todo::Simple::Command::VERSION = '0.17';
 }
 
 use App::Cmd::Setup -command;
 
-use Carp;
-
-use warnings;
 use strict;
+use warnings;
 
 =head1 NAME
 
@@ -16,7 +14,7 @@ Text::Todo::Simple::Command - Base class for Text::Todo::Simple commands
 
 =head1 VERSION
 
-version 0.16
+version 0.17
 
 =head1 METHODS
 

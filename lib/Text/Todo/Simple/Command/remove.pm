@@ -1,12 +1,12 @@
 package Text::Todo::Simple::Command::remove;
-BEGIN {
-  $Text::Todo::Simple::Command::remove::VERSION = '0.16';
+{
+  $Text::Todo::Simple::Command::remove::VERSION = '0.17';
 }
 
 use Text::Todo::Simple -command;
 
-use warnings;
 use strict;
+use warnings;
 
 =head1 NAME
 
@@ -14,7 +14,7 @@ Text::Todo::Simple::Command::remove - Remove a task
 
 =head1 VERSION
 
-version 0.16
+version 0.17
 
 =head1 SYNOPSIS
 

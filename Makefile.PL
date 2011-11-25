@@ -9,29 +9,32 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'Help people finish those damn tasks',
-  'AUTHOR' => 'Alessandro Ghedini <alexbio@cpan.org>',
-  'BUILD_REQUIRES' => {
-    'App::Cmd::Tester' => '0',
-    'Test::File::Contents' => '0',
-    'Test::More' => '0'
+  "ABSTRACT" => "Help people finish those damn tasks",
+  "AUTHOR" => "Alessandro Ghedini <alexbio\@cpan.org>",
+  "BUILD_REQUIRES" => {
+    "App::Cmd::Tester" => 0,
+    "File::Find" => 0,
+    "File::Temp" => 0,
+    "Test::File::Contents" => 0,
+    "Test::More" => 0
   },
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.30'
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'DISTNAME' => 'Text-Todo-Simple',
-  'EXE_FILES' => [
-    'bin/t'
+  "DISTNAME" => "Text-Todo-Simple",
+  "EXE_FILES" => [
+    "bin/t"
   ],
-  'LICENSE' => 'perl',
-  'NAME' => 'Text::Todo::Simple',
-  'PREREQ_PM' => {
-    'App::Cmd::Setup' => '0',
-    'Carp' => '0'
+  "LICENSE" => "perl",
+  "NAME" => "Text::Todo::Simple",
+  "PREREQ_PM" => {
+    "App::Cmd::Setup" => 0,
+    "strict" => 0,
+    "warnings" => 0
   },
-  'VERSION' => '0.16',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "VERSION" => "0.17",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 

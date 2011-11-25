@@ -15,12 +15,11 @@ lib/Text/Todo/Simple/Command/edit.pm
 lib/Text/Todo/Simple/Command/list.pm
 lib/Text/Todo/Simple/Command/move.pm
 lib/Text/Todo/Simple/Command/remove.pm
-t/00-load.t
+t/00-compile.t
 t/01-add.t
 t/02-edit.t
 t/03-move.t
 t/04-do.t
 t/05-remove.t
-t/boilerplate.t
-t/manifest.t
-t/pod.t
+t/release-check-manifest.t
+t/release-pod-syntax.t

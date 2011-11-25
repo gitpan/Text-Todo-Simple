@@ -2,8 +2,8 @@
 
 use Text::Todo::Simple;
 
-use warnings;
 use strict;
+use warnings;
 
 =head1 NAME
 
@@ -11,7 +11,7 @@ t - Help people finish those damn tasks
 
 =head1 VERSION
 
-version 0.16
+version 0.17
 
 =head1 SYNOPSIS
 
@@ -37,73 +37,73 @@ Text::Todo::Simple -> run;
 
 =head2 add, a, --add, -a
 
-Add a task to the listv
+Add a task to the todo list.
 
 =head2 do, --do, -d
 
-Finish a task
+Move a task to the done list.
 
 =head2 remove, rm, --remove, -r
 
-Remove a task
+Remove a task from the todo list.
 
 =head2 list, ls, --list, -l
 
-List your tasks
+List your todo tasks.
 
 =head2 move, mv, --move, -m
 
-Move a task to a new position
+Move a task to a new position.
 
 =head2 edit, ed, --edit, -e
 
-Edit a task
+Edit a task.
 
 =head1 OPTIONS
 
 =head2 --todo, -t
 
-set the todo file (takes precedence on configuration)
+Specifies the todo file (takes precedence on configuration).
 
 =head2 --done, -d
 
-set the done file (takes precedence on configuration)
+Specifies the done file (takes precedence on configuration).
 
 =head1 CONFIGURATION
 
-The following environment variables will affect t.pl behaviour:
+The following environment variables will affect L<t> behaviour:
 
 =head2 TODO_FILE
 
-Specifies the path of the todo file. Default ~/.todo
+Specifies the path of the todo file. Default ~/.todo.
 
 =head2 DONE_FILE
 
-Specifies the path of the done file. Default ~/.done
+Specifies the path of the done file. Default ~/.done.
 
 =head1 EXAMPLES
 
-Get help
+=head2 Get help
 
     $ t commands
     ...
     $ t help add
     ...
 
-Add some tasks
+=head2 Add some tasks
 
     $ t add Do something boring
     Added task '1'
     $ t add Do something else
     Added task '2'
 
-List tasks
+=head2 List tasks
 
     $ t ls
     1: Do something boring
     2: Do something else
 
-Edit a task
+=head2 Edit a task
 
     $ t ed 1 Do something funny
     Replaced task '1'
@@ -113,17 +113,17 @@ or
     $ t ed 1 s/boring/funny/
     Replaced task '1'
 
-Mark a task as done
+=head2 Mark a task as done
 
     $ t do 1
     Done task '1'
 
-Delete a task
+=head2 Delete a task
 
     $ t rm 2
     Removed task '2'
 
-Count tasks
+=head2 Count tasks
 
     $ t ls | wc -l
     0
