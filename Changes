@@ -1,9 +1,31 @@
 ==================================================
-Changes from 2010-11-25 00:00:00 +0000 to present.
+Changes from 2011-07-08 00:00:00 +0000 to present.
 ==================================================
 
 -----------------------------------------
-version 0.17 at 2011-11-25 20:55:34 +0000
+version 0.18 at 2012-07-07 12:59:25 +0000
+-----------------------------------------
+
+  Change: b40836da048414e30e878028b44035147591a775
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-07-07 14:57:38 +0000
+
+    dist.ini: use Git::NextVersion plugin 
+
+  Change: 962b247dd5a9dfa9f3e91d90e8c627ef479b29d6
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-07-07 14:57:22 +0000
+
+    dist.ini: update repo name 
+
+  Change: 22884412a6e605682e726f723034ea756f4c2d57
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-05-08 23:58:00 +0000
+
+    fix order of 'use' (just cosmetics) 
+
+-----------------------------------------
+version 0.17 at 2011-11-25 20:54:55 +0000
 -----------------------------------------
 
   Change: 2d1e0618f3547225d5605948b1ee16c256d21448
@@ -54,258 +76,6 @@ version 0.17 at 2011-11-25 20:55:34 +0000
 
     fix typos 
 
------------------------------------------
-version 0.16 at 2011-05-08 12:53:58 +0000
------------------------------------------
-
-  Change: f6247c00ac3d0c926045eb626a638b4b129710d7
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-05-08 14:53:58 +0000
-
-    bump version 
-
-  Change: 79a501cbb8c33d5b07263e477d6cac3d99417a38
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-05-08 14:52:34 +0000
-
-    update docs 
-
-  Change: 5282767b874907bb6745e066ca93015d9c68d8d6
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-05-08 00:34:45 +0000
-
-    add command aliases 
-
------------------------------------------
-version 0.15 at 2011-05-07 15:14:32 +0000
------------------------------------------
-
-  Change: 03790e9ba8dc0d0345251b4df46bed1e13f08d07
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-05-07 17:14:32 +0000
-
-    bump version 
-
-  Change: 092f92cf6d869bf157d149e8a5b0938720aae9be
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-05-07 17:14:04 +0000
-
-    update test suite 
-
-  Change: f4b8098cc85ee3443dfd1336c0edfe85be4cdf02
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-05-07 17:14:04 +0000
-
-    fix inconsistency between _append and _write methods 
-
-  Change: becdd8d6b95e8a3ea247cbdc2b6fd4812ed6c9ce
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-05-07 17:14:04 +0000
-
-    refactor file methods 
-
-  Change: 8ea8cbc0ccbc936ea718a1be1b3819c0929c132b
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-05-07 17:14:04 +0000
-
-    switch to App::Cmd 
-
-  Change: cbbf2c4b869a65661464082e61c305cc14896856
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-05-07 12:35:35 +0000
-
-    remove bundle 
-
-  Change: c970f7206dc2899210bb80be77b21483498bca87
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-04-25 18:50:40 +0000
-
-    use Author::ALEXBIO dzil bundle 
-
------------------------------------------
-version 0.14 at 2011-03-07 15:13:28 +0000
------------------------------------------
-
-  Change: f0ad100f92efcd7ed521efd125a028a4db8da55f
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-03-07 16:13:28 +0000
-
-    bump version 
-
-  Change: 75d9978ea9592edd32268ecc4511c32c20b5224c
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-03-07 16:13:06 +0000
-
-    update bundle 
-
-  Change: 8098163a41fb101132e0964d4b047c9094e47a47
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-03-07 16:11:08 +0000
-
-    fix spacing 
-
-  Change: 7eb2564b4b233a140ddebd60ca5fce7b13cbdb1e
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-03-07 15:51:22 +0000
-
-    open TODO_FILE if edit is invoked without arguments 
-
-  Change: 3f6ef0de043ac6d836ff31312d3d6b943dc68aed
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-03-07 15:45:24 +0000
-
-    fix executable permission 
-
-  Change: 48822226e3e649732f2252d90b89bd85d5e7a428
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-03-07 15:42:35 +0000
-
-    purge cruft from docs 
-
-  Change: 8d6a1b01ade68e6a25f9da36f7f97f3de930126f
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-03-07 15:41:24 +0000
-
-    fix lower case-starting abstract 
-
-  Change: 56ac7694e29f9787378dacc51d03a9347fff997a
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-03-07 15:40:28 +0000
-
-    add @GitHub bundle 
-
------------------------------------------
-version 0.13 at 2011-01-09 17:43:21 +0000
------------------------------------------
-
-  Change: cc6dbd4235c433cf0ccbd2083f2c23d87eb709c0
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-01-09 18:43:21 +0000
-
-    bump version 
-
-  Change: 67f61705b749e068182ff03c88b4aab7c00009af
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-01-09 13:26:12 +0000
-
-    fix MANIFEST.SKIP path 
-
------------------------------------------
-version 0.12 at 2011-01-06 22:02:59 +0000
------------------------------------------
-
-  Change: 8d2b6f0bdcca560ea4e9eb5e9c405cf0894607bb
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-01-06 23:02:59 +0000
-
-    bump version 
-
-  Change: 92fc3690294a4c5789a6b197b571a82a3e6480e1
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-01-06 23:01:54 +0000
-
-    rename script -> bin 
-
------------------------------------------
-version 0.11 at 2011-01-06 21:51:46 +0000
------------------------------------------
-
-  Change: 9e4eef699725cb04762ee2b4f382f182dec3b967
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-01-06 22:51:46 +0000
-
-    include t bundle 
-
-  Change: a122dfe521825d140d034cb862af735e3b3793fb
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-01-06 22:27:46 +0000
-
-    remove carp debug 
-
-  Change: a300ea841ee49f5871103bb0e090bf023876210a
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-01-06 22:25:59 +0000
-
-    fix git urls... why am I so lame? 
-
------------------------------------------
-version 0.10 at 2011-01-06 21:10:11 +0000
------------------------------------------
-
-  Change: 29b21ad2f0c0bdad3729667966031fb064e0d462
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-01-06 22:10:11 +0000
-
-    bump version 
-
-  Change: fcd418cd813fae750fc69eecafbd44e96a04c00d
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-01-06 22:10:11 +0000
-
-    improve error reporting 
-
-  Change: 2da523a0fae9a09a22b5451c77922cc7bb8bd53c
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-01-06 21:54:27 +0000
-
-    remove debug reference to Data::Dumper 
-
-  Change: 2c8b85c3e02a939da44cb34316dae4612c100c1b
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-01-06 21:54:27 +0000
-
-    add additional tests 
-
-  Change: c80fc05805cdf2fcc4a0c073462aa6216b998b8a
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-01-06 21:54:27 +0000
-
-    remove .gitignore 
-
-  Change: 8c05ac7f7cd8fdc7ed626f93f10817ec98a6e2fa
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-01-06 21:54:27 +0000
-
-    enable regex substitution for action 'edit' 
-
-  Change: 9088e67a135196df34b5aba1aad101a0cd8ec079
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-01-06 21:54:27 +0000
-
-    update documentation 
-
------------------------------------------
-version 0.09 at 2011-01-05 17:39:09 +0000
------------------------------------------
-
-  Change: cca09c94bc67601f95fc2501ebbd80bccbd5b291
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-01-05 18:39:09 +0000
-
-    bump version 
-
-  Change: abd80a7a5c48d43e84ab868a38ccddf14c01ed26
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-01-05 18:38:31 +0000
-
-    rename t.pl -> t 
-
------------------------------------------
-version 0.08 at 2011-01-05 14:33:06 +0000
------------------------------------------
-
-  Change: 0bfc6e5012ca51da58c4925c813ce9f99bbebd99
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-01-05 15:33:06 +0000
-
-    bump version 
-
-  Change: e9d75f5e08f586a00521662e6009f352a7db684d
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-01-05 15:33:06 +0000
-
-    switch to Dist::Zilla 
-
-================================================
-Plus 7 releases after 2010-11-25 00:00:00 +0000.
-================================================
+=================================================
+Plus 16 releases after 2011-07-08 00:00:00 +0000.
+=================================================

@@ -1,12 +1,12 @@
 package Text::Todo::Simple::Command::do;
 {
-  $Text::Todo::Simple::Command::do::VERSION = '0.17';
+  $Text::Todo::Simple::Command::do::VERSION = '0.18';
 }
-
-use Text::Todo::Simple -command;
 
 use strict;
 use warnings;
+
+use Text::Todo::Simple -command;
 
 =head1 NAME
 
@@ -14,7 +14,7 @@ Text::Todo::Simple::Command::do - Finish a task
 
 =head1 VERSION
 
-version 0.17
+version 0.18
 
 =head1 SYNOPSIS
 

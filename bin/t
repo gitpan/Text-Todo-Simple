@@ -1,9 +1,9 @@
 #!/usr/bin/perl
 
-use Text::Todo::Simple;
-
 use strict;
 use warnings;
+
+use Text::Todo::Simple;
 
 =head1 NAME
 
@@ -11,7 +11,7 @@ t - Help people finish those damn tasks
 
 =head1 VERSION
 
-version 0.17
+version 0.18
 
 =head1 SYNOPSIS
 

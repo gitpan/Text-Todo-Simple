@@ -1,12 +1,12 @@
 package Text::Todo::Simple;
 {
-  $Text::Todo::Simple::VERSION = '0.17';
+  $Text::Todo::Simple::VERSION = '0.18';
 }
-
-use App::Cmd::Setup -app;
 
 use strict;
 use warnings;
+
+use App::Cmd::Setup -app;
 
 =head1 NAME
 
@@ -14,7 +14,7 @@ Text::Todo::Simple - Help people finish those damn tasks
 
 =head1 VERSION
 
-version 0.17
+version 0.18
 
 =head1 SYNOPSIS
 

@@ -1,12 +1,12 @@
 package Text::Todo::Simple::Command::list;
 {
-  $Text::Todo::Simple::Command::list::VERSION = '0.17';
+  $Text::Todo::Simple::Command::list::VERSION = '0.18';
 }
-
-use Text::Todo::Simple -command;
 
 use strict;
 use warnings;
+
+use Text::Todo::Simple -command;
 
 =head1 NAME
 
@@ -14,7 +14,7 @@ Text::Todo::Simple::Command::list - List your tasks
 
 =head1 VERSION
 
-version 0.17
+version 0.18
 
 =head1 SYNOPSIS
 
