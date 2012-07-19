@@ -1,6 +1,6 @@
 package Text::Todo::Simple::Command::do;
 {
-  $Text::Todo::Simple::Command::do::VERSION = '0.18';
+  $Text::Todo::Simple::Command::do::VERSION = '0.19';
 }
 
 use strict;
@@ -14,7 +14,7 @@ Text::Todo::Simple::Command::do - Finish a task
 
 =head1 VERSION
 
-version 0.18
+version 0.19
 
 =head1 SYNOPSIS
 

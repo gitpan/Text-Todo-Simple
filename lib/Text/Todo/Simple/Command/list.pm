@@ -1,6 +1,6 @@
 package Text::Todo::Simple::Command::list;
 {
-  $Text::Todo::Simple::Command::list::VERSION = '0.18';
+  $Text::Todo::Simple::Command::list::VERSION = '0.19';
 }
 
 use strict;
@@ -14,7 +14,7 @@ Text::Todo::Simple::Command::list - List your tasks
 
 =head1 VERSION
 
-version 0.18
+version 0.19
 
 =head1 SYNOPSIS
 

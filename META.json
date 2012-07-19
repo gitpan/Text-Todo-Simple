@@ -39,16 +39,16 @@
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/AlexBio/p5-Text-Todo-Simple/issues"
+         "web" : "https://github.com/AlexBio/t/issues"
       },
       "homepage" : "http://metacpan.org/release/Text-Todo-Simple/",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/AlexBio/p5-Text-Todo-Simple.git",
-         "web" : "https://github.com/AlexBio/p5-Text-Todo-Simple"
+         "url" : "git://github.com/AlexBio/t.git",
+         "web" : "https://github.com/AlexBio/t"
       }
    },
-   "version" : "0.18",
+   "version" : "0.19",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
@@ -119,12 +119,12 @@
          {
             "class" : "Dist::Zilla::Plugin::GitHub::Meta",
             "name" : "@Author::ALEXBIO/@GitHub/GitHub::Meta",
-            "version" : "0.24"
+            "version" : "0.25"
          },
          {
             "class" : "Dist::Zilla::Plugin::GitHub::Update",
             "name" : "@Author::ALEXBIO/@GitHub/GitHub::Update",
-            "version" : "0.24"
+            "version" : "0.25"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::NextVersion",

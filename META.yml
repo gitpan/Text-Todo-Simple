@@ -22,10 +22,10 @@ requires:
   strict: 0
   warnings: 0
 resources:
-  bugtracker: https://github.com/AlexBio/p5-Text-Todo-Simple/issues
+  bugtracker: https://github.com/AlexBio/t/issues
   homepage: http://metacpan.org/release/Text-Todo-Simple/
-  repository: git://github.com/AlexBio/p5-Text-Todo-Simple.git
-version: 0.18
+  repository: git://github.com/AlexBio/t.git
+version: 0.19
 x_Dist_Zilla:
   plugins:
     -
@@ -83,11 +83,11 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::GitHub::Meta
       name: '@Author::ALEXBIO/@GitHub/GitHub::Meta'
-      version: 0.24
+      version: 0.25
     -
       class: Dist::Zilla::Plugin::GitHub::Update
       name: '@Author::ALEXBIO/@GitHub/GitHub::Update'
-      version: 0.24
+      version: 0.25
     -
       class: Dist::Zilla::Plugin::Git::NextVersion
       name: '@Author::ALEXBIO/Git::NextVersion'

@@ -1,6 +1,6 @@
 package Text::Todo::Simple::Command::remove;
 {
-  $Text::Todo::Simple::Command::remove::VERSION = '0.18';
+  $Text::Todo::Simple::Command::remove::VERSION = '0.19';
 }
 
 use strict;
@@ -14,7 +14,7 @@ Text::Todo::Simple::Command::remove - Remove a task
 
 =head1 VERSION
 
-version 0.18
+version 0.19
 
 =head1 SYNOPSIS
 
