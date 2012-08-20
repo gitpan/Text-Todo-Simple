@@ -1,6 +1,6 @@
 package Text::Todo::Simple::Command;
 {
-  $Text::Todo::Simple::Command::VERSION = '0.19';
+  $Text::Todo::Simple::Command::VERSION = '0.20';
 }
 
 use strict;
@@ -14,7 +14,7 @@ Text::Todo::Simple::Command - Base class for Text::Todo::Simple commands
 
 =head1 VERSION
 
-version 0.19
+version 0.20
 
 =head1 METHODS
 

@@ -1,16 +1,17 @@
 #!perl -T
 
-use Text::Todo::Simple;
-
 use strict;
 use warnings;
 
 use Test::More;
+
+use File::Slurp;
 use App::Cmd::Tester;
-use Test::File::Contents;
 
-test_app( 'Text::Todo::Simple' => [ qw(do --todo t/todo.txt --done t/done.txt 1) ]);
-file_contents_is('t/todo.txt', "Something else\nSomething less\n", "Test task do");
-file_contents_is('t/done.txt', "Yet another task\n", "Test task do");
+use Text::Todo::Simple;
 
-done_testing(2);
+test_app( 'Text::Todo::Simple' => [qw(do --todo t/todo.txt --done t/done.txt 1)]);
+is(read_file('t/todo.txt'), "Something else\nSomething less\n", "task do");
+is(read_file('t/done.txt'), "Yet another task\n", "task do");
+
+done_testing;

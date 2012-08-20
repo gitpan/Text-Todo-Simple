@@ -1,6 +1,6 @@
 package Text::Todo::Simple;
 {
-  $Text::Todo::Simple::VERSION = '0.19';
+  $Text::Todo::Simple::VERSION = '0.20';
 }
 
 use strict;
@@ -14,22 +14,13 @@ Text::Todo::Simple - Help people finish those damn tasks
 
 =head1 VERSION
 
-version 0.19
-
-=head1 SYNOPSIS
-
-Text::Todo::Simple is a simple and basic todo list manager, without all
-the additional features that make people spend more time on organizing
-their tasks instead of completing them.
+version 0.20
 
 =head1 DESCRIPTION
 
-Text::Todo::Simple tries to be as effective as possible doing the unique
-thing it does without any surplus.
-
-This simplicity is not to distract the users from what really matters:
-emptying the todo list. The time that one wastes in tagging, prioritizing
-and organizing tasks, can be spent more effectively B<completing> the tasks.
+B<Text::Todo::Simple> is a simple and basic todo list manager, without all the
+additional features that make people spend more time on organizing their tasks
+instead of completing them.
 
 =cut
 
