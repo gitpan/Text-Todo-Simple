@@ -1,6 +1,6 @@
 package Text::Todo::Simple;
 {
-  $Text::Todo::Simple::VERSION = '0.20';
+  $Text::Todo::Simple::VERSION = '0.21';
 }
 
 use strict;
@@ -10,17 +10,20 @@ use App::Cmd::Setup -app;
 
 =head1 NAME
 
-Text::Todo::Simple - Help people finish those damn tasks
+Text::Todo::Simple - (DEPRECATED) Help people finish those damn tasks
 
 =head1 VERSION
 
-version 0.20
+version 0.21
 
 =head1 DESCRIPTION
 
 B<Text::Todo::Simple> is a simple and basic todo list manager, without all the
 additional features that make people spend more time on organizing their tasks
 instead of completing them.
+
+B<Note>: Text::Todo::Simple is now deprecated and pretty much unmaintained. Have
+a look at L<Text::Todo> or get in touch if you want to maintain this.
 
 =cut
 

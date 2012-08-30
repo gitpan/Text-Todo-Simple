@@ -1,6 +1,6 @@
 package Text::Todo::Simple::Command::move;
 {
-  $Text::Todo::Simple::Command::move::VERSION = '0.20';
+  $Text::Todo::Simple::Command::move::VERSION = '0.21';
 }
 
 use strict;
@@ -14,7 +14,7 @@ Text::Todo::Simple::Command::move - Move a task to a new position
 
 =head1 VERSION
 
-version 0.20
+version 0.21
 
 =head1 SYNOPSIS
 
